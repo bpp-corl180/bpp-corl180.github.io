@@ -1,202 +1,52 @@
 [
-  {
-    "label": "!",
-    "file": "!"
-  },
-  {
-    "label": "#",
-    "file": "#"
-  },
-  {
-    "label": "$",
-    "file": "$"
-  },
-  {
-    "label": "%",
-    "file": "%"
-  },
-  {
-    "label": "&",
-    "file": "&"
-  },
-  {
-    "label": "*",
-    "file": "*"
-  },
-  {
-    "label": "+",
-    "file": "+"
-  },
-  {
-    "label": "0",
-    "file": "0"
-  },
-  {
-    "label": "1",
-    "file": "1"
-  },
-  {
-    "label": "2",
-    "file": "2"
-  },
-  {
-    "label": "3",
-    "file": "3"
-  },
-  {
-    "label": "4",
-    "file": "4"
-  },
-  {
-    "label": "5",
-    "file": "5"
-  },
-  {
-    "label": "6",
-    "file": "6"
-  },
-  {
-    "label": "7",
-    "file": "7"
-  },
-  {
-    "label": "8",
-    "file": "8"
-  },
-  {
-    "label": "9",
-    "file": "9"
-  },
-  {
-    "label": ">",
-    "file": ">"
-  },
-  {
-    "label": "?",
-    "file": "?"
-  },
-  {
-    "label": "@",
-    "file": "@"
-  },
-  {
-    "label": "A",
-    "file": "A_upper"
-  },
-  {
-    "label": "B",
-    "file": "B_upper"
-  },
-  {
-    "label": "M",
-    "file": "M_upper"
-  },
-  {
-    "label": "Q",
-    "file": "Q_upper"
-  },
-  {
-    "label": "S",
-    "file": "S_upper"
-  },
-  {
-    "label": "W",
-    "file": "W_upper"
-  },
-  {
-    "label": "a",
-    "file": "a_lower"
-  },
-  {
-    "label": "b",
-    "file": "b_lower"
-  },
-  {
-    "label": "custom1",
-    "file": "custom1"
-  },
-  {
-    "label": "custom2",
-    "file": "custom2"
-  },
-  {
-    "label": "custom3",
-    "file": "custom3"
-  },
-  {
-    "label": "custom4",
-    "file": "custom4"
-  },
-  {
-    "label": "custom5",
-    "file": "custom5"
-  },
-  {
-    "label": "custom6_leftside",
-    "file": "custom6_leftside"
-  },
-  {
-    "label": "custom7_birds",
-    "file": "custom7_birds"
-  },
-  {
-    "label": "f12",
-    "file": "f12"
-  },
-  {
-    "label": "f2",
-    "file": "f2"
-  },
-  {
-    "label": "f3",
-    "file": "f3"
-  },
-  {
-    "label": "f5",
-    "file": "f5"
-  },
-  {
-    "label": "f6",
-    "file": "f6"
-  },
-  {
-    "label": "f7",
-    "file": "f7"
-  },
-  {
-    "label": "giraffe",
-    "file": "giraffe"
-  },
-  {
-    "label": "horizon",
-    "file": "horizon"
-  },
-  {
-    "label": "labubu",
-    "file": "labubu"
-  },
-  {
-    "label": "m",
-    "file": "m_lower"
-  },
-  {
-    "label": "q",
-    "file": "q_lower"
-  },
-  {
-    "label": "railroad",
-    "file": "railroad"
-  },
-  {
-    "label": "robot",
-    "file": "robot"
-  },
-  {
-    "label": "s",
-    "file": "s_lower"
-  },
-  {
-    "label": "w",
-    "file": "w_lower"
-  }
+  {"label": "!", "file": "!", "success": true},
+  {"label": "#", "file": "#", "success": true},
+  {"label": "$", "file": "$", "success": true},
+  {"label": "%", "file": "%", "success": true},
+  {"label": "&", "file": "&", "success": true},
+  {"label": "*", "file": "*", "success": true},
+  {"label": "+", "file": "+", "success": true},
+  {"label": "0", "file": "0", "success": true},
+  {"label": "1", "file": "1", "success": true},
+  {"label": "2", "file": "2", "success": true},
+  {"label": "3", "file": "3", "success": true},
+  {"label": "4", "file": "4", "success": true},
+  {"label": "5", "file": "5", "success": true},
+  {"label": "6", "file": "6", "success": true},
+  {"label": "7", "file": "7", "success": true},
+  {"label": "8", "file": "8", "success": true},
+  {"label": "9", "file": "9", "success": true},
+  {"label": ">", "file": ">", "success": true},
+  {"label": "?", "file": "?", "success": true},
+  {"label": "@", "file": "@", "success": true},
+  {"label": "A", "file": "A_upper", "success": true},
+  {"label": "B", "file": "B_upper", "success": true},
+  {"label": "M", "file": "M_upper", "success": true},
+  {"label": "Q", "file": "Q_upper", "success": true},
+  {"label": "S", "file": "S_upper", "success": true},
+  {"label": "W", "file": "W_upper", "success": true},
+  {"label": "a", "file": "a_lower", "success": true},
+  {"label": "b", "file": "b_lower", "success": true},
+  {"label": "lines and circles", "file": "custom1", "success": true},
+  {"label": "yes", "file": "custom2", "success": true},
+  {"label": "star", "file": "custom3", "success": true},
+  {"label": "face", "file": "custom4", "success": true},
+  {"label": "stickman", "file": "custom5", "success": false},
+  {"label": "plus signs", "file": "custom6_leftside", "success": false},
+  {"label": "birds", "file": "custom7_birds", "success": false},
+  {"label": "volume", "file": "f12", "success": true},
+  {"label": "sun", "file": "f2", "success": false},
+  {"label": "boxes", "file": "f3", "success": true},
+  {"label": "mic", "file": "f5", "success": true},
+  {"label": "moon", "file": "f6", "success": true},
+  {"label": "backwards", "file": "f7", "success": true},
+  {"label": "giraffe", "file": "giraffe", "success": false},
+  {"label": "horizon", "file": "horizon", "success": false},
+  {"label": "labubu", "file": "labubu", "success": false},
+  {"label": "m", "file": "m_lower", "success": true},
+  {"label": "q", "file": "q_lower", "success": true},
+  {"label": "railroad", "file": "railroad", "success": false},
+  {"label": "robot", "file": "robot", "success": false},
+  {"label": "s", "file": "s_lower", "success": true},
+  {"label": "w", "file": "w_lower", "success": true}
 ]

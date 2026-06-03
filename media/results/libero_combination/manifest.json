@@ -1,0 +1,712 @@
+{
+  "splits": [
+    {
+      "key": "libero_spatial_selected_combinations_inverse_view",
+      "label": "Seen Combinations",
+      "tasks": [
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it in the black bowl next to the ramekin",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_in_the_black_bowl_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it next to the plate",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the stove",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the table center",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl between the plate and the ramekin and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it in the black bowl next to the plate",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_in_the_black_bowl_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it in the black bowl on the plate",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_in_the_black_bowl_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it next to the cookie box",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it next to the cookie box 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_next_to_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it next to the plate",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the plate",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the stove",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl from table center and place it on the wooden cabinet 2",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_wooden_cabinet_2"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it in the black bowl on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_in_the_black_bowl_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it next to the plate",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the stove",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it between the plate and the ramekin 3",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_between_the_plate_and_the_ramekin_3"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it next to the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the cookie box 3",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_cookie_box_3"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the plate 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the ramekin 3",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_ramekin_3"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the stove",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the table center",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the table center 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_table_center_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the table center 3",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_table_center_3"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the wooden cabinet 2",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_wooden_cabinet_2"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it on the wooden cabinet 3",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_wooden_cabinet_3"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it in the black bowl next to the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_in_the_black_bowl_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it in the black bowl on the table center",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_in_the_black_bowl_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the plate 2",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the table center",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the wooden cabinet 2",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_wooden_cabinet_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it in the black bowl between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_in_the_black_bowl_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it in the black bowl next to the cookie box",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_in_the_black_bowl_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it in the black bowl next to the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_in_the_black_bowl_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it next to the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the cookie box 3",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_cookie_box_3"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the plate",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the plate 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the plate 3",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_3"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the ramekin 3",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_ramekin_3"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the stove",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the stove 3",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_stove_3"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the wooden cabinet 2",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_wooden_cabinet_2"
+        },
+        {
+          "label": "pick up the black bowl next to the ramekin and place it on the wooden cabinet 3",
+          "file": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_wooden_cabinet_3"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it in the black bowl on the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_in_the_black_bowl_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the cookie box 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the plate",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the plate",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the stove",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the table center",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the table center 2",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_table_center_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it in the black bowl next to the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_in_the_black_bowl_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it next to the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it next to the plate",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the stove",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the wooden cabinet 2",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_wooden_cabinet_2"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it in the black bowl on the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_in_the_black_bowl_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it next to the plate",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it on the plate",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it on the stove",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it on the table center",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl on the ramekin and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_between_the_plate_and_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it between the plate and the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_between_the_plate_and_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it in the black bowl on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_in_the_black_bowl_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it next to the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_next_to_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it next to the plate",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the plate",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the table center",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the table center 2",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_table_center_2"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it in the black bowl in the top drawer of the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_in_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it in the black bowl on the cookie box",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_in_the_black_bowl_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it in the black bowl on the stove",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_in_the_black_bowl_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the plate",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the plate 3",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_plate_3"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it next to the ramekin 3",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_next_to_the_ramekin_3"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the cookie box 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_cookie_box_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the plate 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the plate 3",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_3"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the ramekin 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_ramekin_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the ramekin 3",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_ramekin_3"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the stove",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the stove 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_stove_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the table center 2",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_table_center_2"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it on the table center 3",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_table_center_3"
+        }
+      ]
+    },
+    {
+      "key": "libero_spatial_selected_combinations_view",
+      "label": "Unseen Combinations",
+      "tasks": [
+        {
+          "label": "pick up the black bowl from table center and place it on the cookie box",
+          "file": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_cookie_box"
+        },
+        {
+          "label": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "file": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate"
+        },
+        {
+          "label": "pick up the black bowl next to the cookie box and place it in the black bowl next to the ramekin",
+          "file": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_in_the_black_bowl_next_to_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl next to the plate and place it on the stove",
+          "file": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_stove"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it in the black bowl on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_in_the_black_bowl_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the cookie box and place it on the wooden cabinet",
+          "file": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_wooden_cabinet"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it in the black bowl on the table center",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_in_the_black_bowl_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl on the plate and place it on the table center",
+          "file": "pick_up_the_black_bowl_on_the_plate_and_place_it_on_the_table_center"
+        },
+        {
+          "label": "pick up the black bowl on the stove and place it on the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_ramekin"
+        },
+        {
+          "label": "pick up the black bowl on the wooden cabinet and place it between the plate and the ramekin",
+          "file": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_between_the_plate_and_the_ramekin"
+        }
+      ]
+    }
+  ]
+}

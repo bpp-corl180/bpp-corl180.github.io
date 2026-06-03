@@ -133,15 +133,22 @@ def find_video_entries(source: dict, prefix: str) -> dict[str, dict]:
     }
 
 
-def scan_history_for_videos(run: wandb.apis.public.Run, prefix: str) -> dict[str, dict]:
-    """Scan all history rows for video entries matching prefix (later steps win)."""
-    entries: dict[str, dict] = {}
-    rows = list(tqdm(run.scan_history(), desc="  scanning history", unit="step", ncols=80))
-    for row in rows:
-        for k, v in row.items():
-            if k.startswith(prefix) and isinstance(v, dict) and v.get("_type") in VIDEO_TYPES:
-                entries[k] = v
-    return entries
+def list_files_for_prefix(run: wandb.apis.public.Run, prefix: str) -> dict[str, dict]:
+    """
+    Find video files via run.files() metadata listing — much faster than scan_history.
+    Returns {key: {"_type": "video-file", "path": file_path}} using the highest-step file per key.
+    """
+    FILE_RE = re.compile(r"^media/videos/(.+)_(\d+)_[0-9a-f]+\.mp4$")
+    latest: dict[str, tuple[int, str]] = {}
+    for f in tqdm(run.files(), desc="  listing files", unit="file", ncols=80):
+        m = FILE_RE.match(f.name)
+        if not m:
+            continue
+        key, step = m.group(1), int(m.group(2))
+        if key.startswith(prefix):
+            if key not in latest or step > latest[key][0]:
+                latest[key] = (step, f.name)
+    return {key: {"_type": "video-file", "path": path} for key, (_, path) in latest.items()}
 
 
 def download_entries(
@@ -185,11 +192,11 @@ def process_run(
     video_entries = find_video_entries(summary, VIDEO_KEY_PREFIX)
 
     if not video_entries:
-        print(f"  [!] Not in summary — scanning history ...")
-        video_entries = scan_history_for_videos(run, VIDEO_KEY_PREFIX)
+        print(f"  [!] Not in summary — listing run files ...")
+        video_entries = list_files_for_prefix(run, VIDEO_KEY_PREFIX)
 
     if not video_entries:
-        print(f"  [!] No video entries found anywhere for prefix '{VIDEO_KEY_PREFIX}'.")
+        print(f"  [!] No video entries found for prefix '{VIDEO_KEY_PREFIX}'.")
         return []
 
     print(f"  videos : {len(video_entries)} found → {out_dir.relative_to(REPO_ROOT)}")
@@ -201,14 +208,7 @@ def process_run(
         attn_entries = find_video_entries(summary, ATTENTION_KEY_PREFIX)
 
         if not attn_entries:
-            # Check what types the attention keys actually are (diagnostic)
-            attn_raw = {k: v for k, v in summary.items() if k.startswith(ATTENTION_KEY_PREFIX)}
-            if attn_raw:
-                sample_key = next(iter(attn_raw))
-                print(f"  [!] Attention entries exist but wrong type.")
-                print(f"      Sample: {sample_key} → _type={attn_raw[sample_key].get('_type')!r}")
-                print(f"      Falling back to history scan ...")
-            attn_entries = scan_history_for_videos(run, ATTENTION_KEY_PREFIX)
+            attn_entries = list_files_for_prefix(run, ATTENTION_KEY_PREFIX)
 
         if not attn_entries:
             print(f"  [!] No attention map videos found.")

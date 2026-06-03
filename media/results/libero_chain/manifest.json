@@ -1,0 +1,1312 @@
+{
+  "splits": [
+    {
+      "key": "libero_goal_chain_firststep_view",
+      "label": "First Step",
+      "tasks": [
+        {
+          "label": "open the middle drawer of the cabinet",
+          "file": "open_the_middle_drawer_of_the_cabinet"
+        },
+        {
+          "label": "open the top drawer",
+          "file": "open_the_top_drawer"
+        },
+        {
+          "label": "push the plate to the front of the stove",
+          "file": "push_the_plate_to_the_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl in front of the stove",
+          "file": "put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on the cream cheese",
+          "file": "put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the bowl on the plate",
+          "file": "put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the bowl on the stove",
+          "file": "put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the bowl on top of the cabinet",
+          "file": "put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese in front of the stove",
+          "file": "put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese in the bowl",
+          "file": "put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "put the cream cheese on the plate",
+          "file": "put_the_cream_cheese_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on the stove",
+          "file": "put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the wine bottle in front of the stove",
+          "file": "put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the wine bottle in the bowl",
+          "file": "put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese",
+          "file": "put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the wine bottle on the plate",
+          "file": "put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the wine bottle on the rack",
+          "file": "put_the_wine_bottle_on_the_rack"
+        },
+        {
+          "label": "put the wine bottle on the stove",
+          "file": "put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "turn on the stove",
+          "file": "turn_on_the_stove"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal_chain_secondstep_view",
+      "label": "Second Step",
+      "tasks": [
+        {
+          "label": "put the bowl in front of the stove 10",
+          "file": "put_the_bowl_in_front_of_the_stove_10"
+        },
+        {
+          "label": "put the bowl in front of the stove 2",
+          "file": "put_the_bowl_in_front_of_the_stove_2"
+        },
+        {
+          "label": "put the bowl in front of the stove 3",
+          "file": "put_the_bowl_in_front_of_the_stove_3"
+        },
+        {
+          "label": "put the bowl in front of the stove 4",
+          "file": "put_the_bowl_in_front_of_the_stove_4"
+        },
+        {
+          "label": "put the bowl in front of the stove 6",
+          "file": "put_the_bowl_in_front_of_the_stove_6"
+        },
+        {
+          "label": "put the bowl in front of the stove 7",
+          "file": "put_the_bowl_in_front_of_the_stove_7"
+        },
+        {
+          "label": "put the bowl in front of the stove 8",
+          "file": "put_the_bowl_in_front_of_the_stove_8"
+        },
+        {
+          "label": "put the bowl in front of the stove 9",
+          "file": "put_the_bowl_in_front_of_the_stove_9"
+        },
+        {
+          "label": "put the bowl on the cream cheese 11",
+          "file": "put_the_bowl_on_the_cream_cheese_11"
+        },
+        {
+          "label": "put the bowl on the cream cheese 12",
+          "file": "put_the_bowl_on_the_cream_cheese_12"
+        },
+        {
+          "label": "put the bowl on the cream cheese 2",
+          "file": "put_the_bowl_on_the_cream_cheese_2"
+        },
+        {
+          "label": "put the bowl on the cream cheese 3",
+          "file": "put_the_bowl_on_the_cream_cheese_3"
+        },
+        {
+          "label": "put the bowl on the cream cheese 4",
+          "file": "put_the_bowl_on_the_cream_cheese_4"
+        },
+        {
+          "label": "put the bowl on the cream cheese 6",
+          "file": "put_the_bowl_on_the_cream_cheese_6"
+        },
+        {
+          "label": "put the bowl on the cream cheese 7",
+          "file": "put_the_bowl_on_the_cream_cheese_7"
+        },
+        {
+          "label": "put the bowl on the cream cheese 8",
+          "file": "put_the_bowl_on_the_cream_cheese_8"
+        },
+        {
+          "label": "put the bowl on the cream cheese 9",
+          "file": "put_the_bowl_on_the_cream_cheese_9"
+        },
+        {
+          "label": "put the bowl on the plate 11",
+          "file": "put_the_bowl_on_the_plate_11"
+        },
+        {
+          "label": "put the bowl on the plate 2",
+          "file": "put_the_bowl_on_the_plate_2"
+        },
+        {
+          "label": "put the bowl on the plate 3",
+          "file": "put_the_bowl_on_the_plate_3"
+        },
+        {
+          "label": "put the bowl on the plate 4",
+          "file": "put_the_bowl_on_the_plate_4"
+        },
+        {
+          "label": "put the bowl on the plate 5",
+          "file": "put_the_bowl_on_the_plate_5"
+        },
+        {
+          "label": "put the bowl on the plate 6",
+          "file": "put_the_bowl_on_the_plate_6"
+        },
+        {
+          "label": "put the bowl on the plate 7",
+          "file": "put_the_bowl_on_the_plate_7"
+        },
+        {
+          "label": "put the bowl on the plate 8",
+          "file": "put_the_bowl_on_the_plate_8"
+        },
+        {
+          "label": "put the bowl on the plate 9",
+          "file": "put_the_bowl_on_the_plate_9"
+        },
+        {
+          "label": "put the bowl on the stove 10",
+          "file": "put_the_bowl_on_the_stove_10"
+        },
+        {
+          "label": "put the bowl on the stove 11",
+          "file": "put_the_bowl_on_the_stove_11"
+        },
+        {
+          "label": "put the bowl on the stove 2",
+          "file": "put_the_bowl_on_the_stove_2"
+        },
+        {
+          "label": "put the bowl on the stove 3",
+          "file": "put_the_bowl_on_the_stove_3"
+        },
+        {
+          "label": "put the bowl on the stove 4",
+          "file": "put_the_bowl_on_the_stove_4"
+        },
+        {
+          "label": "put the bowl on the stove 5",
+          "file": "put_the_bowl_on_the_stove_5"
+        },
+        {
+          "label": "put the bowl on the stove 6",
+          "file": "put_the_bowl_on_the_stove_6"
+        },
+        {
+          "label": "put the bowl on the stove 7",
+          "file": "put_the_bowl_on_the_stove_7"
+        },
+        {
+          "label": "put the bowl on the stove 8",
+          "file": "put_the_bowl_on_the_stove_8"
+        },
+        {
+          "label": "put the bowl on the stove 9",
+          "file": "put_the_bowl_on_the_stove_9"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 11",
+          "file": "put_the_bowl_on_top_of_the_cabinet_11"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 2",
+          "file": "put_the_bowl_on_top_of_the_cabinet_2"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 3",
+          "file": "put_the_bowl_on_top_of_the_cabinet_3"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 4",
+          "file": "put_the_bowl_on_top_of_the_cabinet_4"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 5",
+          "file": "put_the_bowl_on_top_of_the_cabinet_5"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 6",
+          "file": "put_the_bowl_on_top_of_the_cabinet_6"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 7",
+          "file": "put_the_bowl_on_top_of_the_cabinet_7"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 8",
+          "file": "put_the_bowl_on_top_of_the_cabinet_8"
+        },
+        {
+          "label": "put the bowl on top of the cabinet 9",
+          "file": "put_the_bowl_on_top_of_the_cabinet_9"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 10",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_10"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 2",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_2"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 3",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_3"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 4",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_4"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 5",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_5"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 6",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_6"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 7",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_7"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 8",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_8"
+        },
+        {
+          "label": "put the cream cheese in front of the stove 9",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_9"
+        },
+        {
+          "label": "put the cream cheese in the bowl 12",
+          "file": "put_the_cream_cheese_in_the_bowl_12"
+        },
+        {
+          "label": "put the cream cheese in the bowl 2",
+          "file": "put_the_cream_cheese_in_the_bowl_2"
+        },
+        {
+          "label": "put the cream cheese in the bowl 4",
+          "file": "put_the_cream_cheese_in_the_bowl_4"
+        },
+        {
+          "label": "put the cream cheese in the bowl 5",
+          "file": "put_the_cream_cheese_in_the_bowl_5"
+        },
+        {
+          "label": "put the cream cheese in the bowl 6",
+          "file": "put_the_cream_cheese_in_the_bowl_6"
+        },
+        {
+          "label": "put the cream cheese in the bowl 8",
+          "file": "put_the_cream_cheese_in_the_bowl_8"
+        },
+        {
+          "label": "put the cream cheese in the bowl 9",
+          "file": "put_the_cream_cheese_in_the_bowl_9"
+        },
+        {
+          "label": "put the cream cheese on the plate 11",
+          "file": "put_the_cream_cheese_on_the_plate_11"
+        },
+        {
+          "label": "put the cream cheese on the plate 2",
+          "file": "put_the_cream_cheese_on_the_plate_2"
+        },
+        {
+          "label": "put the cream cheese on the plate 4",
+          "file": "put_the_cream_cheese_on_the_plate_4"
+        },
+        {
+          "label": "put the cream cheese on the plate 6",
+          "file": "put_the_cream_cheese_on_the_plate_6"
+        },
+        {
+          "label": "put the cream cheese on the plate 8",
+          "file": "put_the_cream_cheese_on_the_plate_8"
+        },
+        {
+          "label": "put the cream cheese on the stove 10",
+          "file": "put_the_cream_cheese_on_the_stove_10"
+        },
+        {
+          "label": "put the cream cheese on the stove 11",
+          "file": "put_the_cream_cheese_on_the_stove_11"
+        },
+        {
+          "label": "put the cream cheese on the stove 3",
+          "file": "put_the_cream_cheese_on_the_stove_3"
+        },
+        {
+          "label": "put the cream cheese on the stove 4",
+          "file": "put_the_cream_cheese_on_the_stove_4"
+        },
+        {
+          "label": "put the cream cheese on the stove 5",
+          "file": "put_the_cream_cheese_on_the_stove_5"
+        },
+        {
+          "label": "put the cream cheese on the stove 7",
+          "file": "put_the_cream_cheese_on_the_stove_7"
+        },
+        {
+          "label": "put the cream cheese on the stove 8",
+          "file": "put_the_cream_cheese_on_the_stove_8"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 10",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_10"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 11",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_11"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 2",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_2"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 4",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_4"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 5",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_5"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 6",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_6"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet 8",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_8"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 10",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_10"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 11",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_11"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 2",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_2"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 3",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_3"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 4",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_4"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 5",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_5"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 6",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_6"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 7",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_7"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 8",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_8"
+        },
+        {
+          "label": "put the wine bottle in front of the stove 9",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_9"
+        },
+        {
+          "label": "put the wine bottle in the bowl 10",
+          "file": "put_the_wine_bottle_in_the_bowl_10"
+        },
+        {
+          "label": "put the wine bottle in the bowl 11",
+          "file": "put_the_wine_bottle_in_the_bowl_11"
+        },
+        {
+          "label": "put the wine bottle in the bowl 12",
+          "file": "put_the_wine_bottle_in_the_bowl_12"
+        },
+        {
+          "label": "put the wine bottle in the bowl 13",
+          "file": "put_the_wine_bottle_in_the_bowl_13"
+        },
+        {
+          "label": "put the wine bottle in the bowl 2",
+          "file": "put_the_wine_bottle_in_the_bowl_2"
+        },
+        {
+          "label": "put the wine bottle in the bowl 3",
+          "file": "put_the_wine_bottle_in_the_bowl_3"
+        },
+        {
+          "label": "put the wine bottle in the bowl 4",
+          "file": "put_the_wine_bottle_in_the_bowl_4"
+        },
+        {
+          "label": "put the wine bottle in the bowl 5",
+          "file": "put_the_wine_bottle_in_the_bowl_5"
+        },
+        {
+          "label": "put the wine bottle in the bowl 6",
+          "file": "put_the_wine_bottle_in_the_bowl_6"
+        },
+        {
+          "label": "put the wine bottle in the bowl 7",
+          "file": "put_the_wine_bottle_in_the_bowl_7"
+        },
+        {
+          "label": "put the wine bottle in the bowl 8",
+          "file": "put_the_wine_bottle_in_the_bowl_8"
+        },
+        {
+          "label": "put the wine bottle in the bowl 9",
+          "file": "put_the_wine_bottle_in_the_bowl_9"
+        },
+        {
+          "label": "put the wine bottle in the top drawer",
+          "file": "put_the_wine_bottle_in_the_top_drawer"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 10",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_10"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 12",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_12"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 13",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_13"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 2",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_2"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 3",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_3"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 4",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_4"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 5",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_5"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 6",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_6"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 7",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_7"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 8",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_8"
+        },
+        {
+          "label": "put the wine bottle on the cream cheese 9",
+          "file": "put_the_wine_bottle_on_the_cream_cheese_9"
+        },
+        {
+          "label": "put the wine bottle on the plate 10",
+          "file": "put_the_wine_bottle_on_the_plate_10"
+        },
+        {
+          "label": "put the wine bottle on the plate 12",
+          "file": "put_the_wine_bottle_on_the_plate_12"
+        },
+        {
+          "label": "put the wine bottle on the plate 2",
+          "file": "put_the_wine_bottle_on_the_plate_2"
+        },
+        {
+          "label": "put the wine bottle on the plate 3",
+          "file": "put_the_wine_bottle_on_the_plate_3"
+        },
+        {
+          "label": "put the wine bottle on the plate 4",
+          "file": "put_the_wine_bottle_on_the_plate_4"
+        },
+        {
+          "label": "put the wine bottle on the plate 5",
+          "file": "put_the_wine_bottle_on_the_plate_5"
+        },
+        {
+          "label": "put the wine bottle on the plate 6",
+          "file": "put_the_wine_bottle_on_the_plate_6"
+        },
+        {
+          "label": "put the wine bottle on the plate 7",
+          "file": "put_the_wine_bottle_on_the_plate_7"
+        },
+        {
+          "label": "put the wine bottle on the plate 8",
+          "file": "put_the_wine_bottle_on_the_plate_8"
+        },
+        {
+          "label": "put the wine bottle on the plate 9",
+          "file": "put_the_wine_bottle_on_the_plate_9"
+        },
+        {
+          "label": "put the wine bottle on the stove 10",
+          "file": "put_the_wine_bottle_on_the_stove_10"
+        },
+        {
+          "label": "put the wine bottle on the stove 11",
+          "file": "put_the_wine_bottle_on_the_stove_11"
+        },
+        {
+          "label": "put the wine bottle on the stove 12",
+          "file": "put_the_wine_bottle_on_the_stove_12"
+        },
+        {
+          "label": "put the wine bottle on the stove 2",
+          "file": "put_the_wine_bottle_on_the_stove_2"
+        },
+        {
+          "label": "put the wine bottle on the stove 3",
+          "file": "put_the_wine_bottle_on_the_stove_3"
+        },
+        {
+          "label": "put the wine bottle on the stove 4",
+          "file": "put_the_wine_bottle_on_the_stove_4"
+        },
+        {
+          "label": "put the wine bottle on the stove 5",
+          "file": "put_the_wine_bottle_on_the_stove_5"
+        },
+        {
+          "label": "put the wine bottle on the stove 6",
+          "file": "put_the_wine_bottle_on_the_stove_6"
+        },
+        {
+          "label": "put the wine bottle on the stove 7",
+          "file": "put_the_wine_bottle_on_the_stove_7"
+        },
+        {
+          "label": "put the wine bottle on the stove 8",
+          "file": "put_the_wine_bottle_on_the_stove_8"
+        },
+        {
+          "label": "put the wine bottle on the stove 9",
+          "file": "put_the_wine_bottle_on_the_stove_9"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 10",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_10"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 11",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_11"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 12",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_12"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 2",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_2"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 3",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_3"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 4",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_4"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 5",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_5"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 6",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_6"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 7",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_7"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 8",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_8"
+        },
+        {
+          "label": "put the wine bottle on top of the cabinet 9",
+          "file": "put_the_wine_bottle_on_top_of_the_cabinet_9"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal_chain_selected_inverse_view",
+      "label": "Seen Chains",
+      "tasks": [
+        {
+          "label": "open the middle drawer of the cabinet and put the cream cheese inside",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_put_the_cream_cheese_inside"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and put the wine bottle inside",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_put_the_wine_bottle_inside"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the cream cheese in front of the stove",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the cream cheese on top of the cabinet",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the wine bottle in front of the stove",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the wine bottle on the cream cheese",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the wine bottle on the stove",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "open the middle drawer of the cabinet and then put the wine bottle on top of the cabinet",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "open the top drawer and put the bowl inside",
+          "file": "open_the_top_drawer_and_put_the_bowl_inside"
+        },
+        {
+          "label": "open the top drawer and put the wine bottle inside",
+          "file": "open_the_top_drawer_and_put_the_wine_bottle_inside"
+        },
+        {
+          "label": "open the top drawer and then put the bowl in front of the stove",
+          "file": "open_the_top_drawer_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the bowl on the cream cheese",
+          "file": "open_the_top_drawer_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "open the top drawer and then put the bowl on the stove",
+          "file": "open_the_top_drawer_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the cream cheese in front of the stove",
+          "file": "open_the_top_drawer_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the cream cheese on the stove",
+          "file": "open_the_top_drawer_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the wine bottle in front of the stove",
+          "file": "open_the_top_drawer_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the wine bottle in the bowl",
+          "file": "open_the_top_drawer_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "open the top drawer and then put the wine bottle on the cream cheese",
+          "file": "open_the_top_drawer_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "open the top drawer and then put the wine bottle on the stove",
+          "file": "open_the_top_drawer_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the bowl on the cream cheese",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the bowl on the stove",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the bowl on top of the cabinet",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the wine bottle in the bowl",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the wine bottle on the cream cheese",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the wine bottle on the plate",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the wine bottle on the stove",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the wine bottle on top of the cabinet",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle in the bowl",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle on the bowl region",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle on the cream cheese",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle on the plate",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle on the stove",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the bowl in front of the stove and then put the wine bottle on top of the cabinet",
+          "file": "put_the_bowl_in_front_of_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on the cream cheese and then put the wine bottle on the bowl region",
+          "file": "put_the_bowl_on_the_cream_cheese_and_then_put_the_wine_bottle_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on the cream cheese and then put the wine bottle on the stove",
+          "file": "put_the_bowl_on_the_cream_cheese_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the bowl on the cream cheese and then put the wine bottle on top of the cabinet",
+          "file": "put_the_bowl_on_the_cream_cheese_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on the plate and then put the cream cheese in front of the stove",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on the plate and then put the cream cheese on the bowl region",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_cream_cheese_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on the plate and then put the cream cheese on the stove",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "put the bowl on the plate and then put the cream cheese on top of the cabinet",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle in front of the stove",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle in the bowl",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle on the bowl region",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle on the cream cheese",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle on the stove",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the bowl on the plate and then put the wine bottle on top of the cabinet",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on the stove and then put the cream cheese in front of the stove",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on the stove and then put the cream cheese in the bowl",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on the stove and then put the cream cheese on the bowl region",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_cream_cheese_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on the stove and then put the cream cheese on the plate",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_cream_cheese_on_the_plate"
+        },
+        {
+          "label": "put the bowl on the stove and then put the cream cheese on top of the cabinet",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle in front of the stove",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle in the bowl",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle on the bowl region",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle on the cream cheese",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle on the plate",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the bowl on the stove and then put the wine bottle on top of the cabinet",
+          "file": "put_the_bowl_on_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the cream cheese in front of the stove",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the cream cheese in the bowl",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the cream cheese on the bowl region",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_cream_cheese_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the cream cheese on the stove",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle in front of the stove",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle in the bowl",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle on the bowl region",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_bowl_region"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle on the cream cheese",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle on the plate",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the wine bottle on the stove",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the bowl on the cream cheese",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the bowl on the cream cheese region",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_bowl_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the bowl on the plate",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the bowl on the stove",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the bowl on top of the cabinet",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle in the bowl",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle on the cream cheese",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle on the cream cheese region",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle on the plate",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle on the stove",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese in front of the stove and then put the wine bottle on top of the cabinet",
+          "file": "put_the_cream_cheese_in_front_of_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese in the bowl and then put the wine bottle in front of the stove",
+          "file": "put_the_cream_cheese_in_the_bowl_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese in the bowl and then put the wine bottle on the cream cheese region",
+          "file": "put_the_cream_cheese_in_the_bowl_and_then_put_the_wine_bottle_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese in the bowl and then put the wine bottle on the plate",
+          "file": "put_the_cream_cheese_in_the_bowl_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese in the bowl and then put the wine bottle on the stove",
+          "file": "put_the_cream_cheese_in_the_bowl_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese in the bowl and then put the wine bottle on top of the cabinet",
+          "file": "put_the_cream_cheese_in_the_bowl_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the bowl in front of the stove",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the bowl on the cream cheese region",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_bowl_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the bowl on the stove",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the bowl on top of the cabinet",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle in front of the stove",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle in the bowl",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle on the cream cheese",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle on the cream cheese region",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle on the stove",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the wine bottle on top of the cabinet",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the bowl in front of the stove",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the bowl on the cream cheese",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the bowl on the cream cheese region",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_bowl_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the bowl on the plate",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the bowl on top of the cabinet",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle in front of the stove",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle in the bowl",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle on the cream cheese",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle on the cream cheese region",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle on the plate",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on the stove and then put the wine bottle on top of the cabinet",
+          "file": "put_the_cream_cheese_on_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the bowl in front of the stove",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the bowl on the cream cheese",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the bowl on the cream cheese region",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_bowl_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the bowl on the plate",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the bowl on the stove",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle in front of the stove",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle on the cream cheese",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle on the cream cheese region",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_cream_cheese_region"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle on the plate",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle on the stove",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle in front of the stove and then put the bowl on the plate",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the wine bottle in front of the stove and then put the bowl on the wine bottle region",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_and_then_put_the_bowl_on_the_wine_bottle_region"
+        },
+        {
+          "label": "put the wine bottle in front of the stove and then put the bowl on top of the cabinet",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the wine bottle in the bowl and then put the cream cheese in front of the stove",
+          "file": "put_the_wine_bottle_in_the_bowl_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "put the wine bottle in the bowl and then put the cream cheese on the plate",
+          "file": "put_the_wine_bottle_in_the_bowl_and_then_put_the_cream_cheese_on_the_plate"
+        },
+        {
+          "label": "put the wine bottle in the bowl and then put the cream cheese on the stove",
+          "file": "put_the_wine_bottle_in_the_bowl_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle in the bowl and then put the cream cheese on top of the cabinet",
+          "file": "put_the_wine_bottle_in_the_bowl_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the wine bottle on the plate and then put the cream cheese in the bowl",
+          "file": "put_the_wine_bottle_on_the_plate_and_then_put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "put the wine bottle on the plate and then put the cream cheese on the stove",
+          "file": "put_the_wine_bottle_on_the_plate_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle on the plate and then put the cream cheese on top of the cabinet",
+          "file": "put_the_wine_bottle_on_the_plate_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl in front of the stove",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl on the cream cheese",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl on the plate",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl on the stove",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl on the wine bottle region",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_on_the_wine_bottle_region"
+        },
+        {
+          "label": "turn on the stove and then put the bowl in front of the stove",
+          "file": "turn_on_the_stove_and_then_put_the_bowl_in_front_of_the_stove"
+        },
+        {
+          "label": "turn on the stove and then put the bowl on the cream cheese",
+          "file": "turn_on_the_stove_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "turn on the stove and then put the bowl on the plate",
+          "file": "turn_on_the_stove_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "turn on the stove and then put the bowl on top of the cabinet",
+          "file": "turn_on_the_stove_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "turn on the stove and then put the cream cheese in front of the stove",
+          "file": "turn_on_the_stove_and_then_put_the_cream_cheese_in_front_of_the_stove"
+        },
+        {
+          "label": "turn on the stove and then put the cream cheese in the bowl",
+          "file": "turn_on_the_stove_and_then_put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "turn on the stove and then put the cream cheese on the plate",
+          "file": "turn_on_the_stove_and_then_put_the_cream_cheese_on_the_plate"
+        },
+        {
+          "label": "turn on the stove and then put the cream cheese on the stove",
+          "file": "turn_on_the_stove_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "turn on the stove and then put the cream cheese on top of the cabinet",
+          "file": "turn_on_the_stove_and_then_put_the_cream_cheese_on_top_of_the_cabinet"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle in front of the stove",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_in_front_of_the_stove"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle in the bowl",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle on the cream cheese",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_on_the_cream_cheese"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle on the plate",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_on_the_plate"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle on the stove",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_on_the_stove"
+        },
+        {
+          "label": "turn on the stove and then put the wine bottle on top of the cabinet",
+          "file": "turn_on_the_stove_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        }
+      ]
+    },
+    {
+      "key": "libero_goal_chain_selected_view",
+      "label": "Unseen Chains",
+      "tasks": [
+        {
+          "label": "open the middle drawer of the cabinet and then put the cream cheese on the stove",
+          "file": "open_the_middle_drawer_of_the_cabinet_and_then_put_the_cream_cheese_on_the_stove"
+        },
+        {
+          "label": "open the top drawer and then put the wine bottle on top of the cabinet",
+          "file": "open_the_top_drawer_and_then_put_the_wine_bottle_on_top_of_the_cabinet"
+        },
+        {
+          "label": "push the plate to the front of the stove and then put the bowl on the plate",
+          "file": "push_the_plate_to_the_front_of_the_stove_and_then_put_the_bowl_on_the_plate"
+        },
+        {
+          "label": "put the bowl on the plate and then put the cream cheese in the bowl",
+          "file": "put_the_bowl_on_the_plate_and_then_put_the_cream_cheese_in_the_bowl"
+        },
+        {
+          "label": "put the bowl on top of the cabinet and then put the cream cheese on the plate",
+          "file": "put_the_bowl_on_top_of_the_cabinet_and_then_put_the_cream_cheese_on_the_plate"
+        },
+        {
+          "label": "put the cream cheese on the plate and then put the bowl on the cream cheese",
+          "file": "put_the_cream_cheese_on_the_plate_and_then_put_the_bowl_on_the_cream_cheese"
+        },
+        {
+          "label": "put the cream cheese on top of the cabinet and then put the wine bottle in the bowl",
+          "file": "put_the_cream_cheese_on_top_of_the_cabinet_and_then_put_the_wine_bottle_in_the_bowl"
+        },
+        {
+          "label": "put the wine bottle in front of the stove and then put the bowl on the stove",
+          "file": "put_the_wine_bottle_in_front_of_the_stove_and_then_put_the_bowl_on_the_stove"
+        },
+        {
+          "label": "put the wine bottle on the rack and then put the bowl on top of the cabinet",
+          "file": "put_the_wine_bottle_on_the_rack_and_then_put_the_bowl_on_top_of_the_cabinet"
+        },
+        {
+          "label": "turn on the stove and then put the bowl on the stove",
+          "file": "turn_on_the_stove_and_then_put_the_bowl_on_the_stove"
+        }
+      ]
+    }
+  ]
+}

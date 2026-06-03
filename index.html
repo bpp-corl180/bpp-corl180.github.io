@@ -132,6 +132,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       margin: 1rem 0 1.25rem;
+      min-height: 2rem;
     }
 
     .trial-btn {
@@ -155,6 +156,35 @@
       color: var(--accent);
     }
 
+    .trial-btn.success { border-color: #6EAF85; color: #15803D; }
+    .trial-btn.success:hover { border-color: #15803D; background: #F0FDF4; color: #15803D; }
+    .trial-btn.success.active { border-color: #15803D; box-shadow: 0 0 0 1px #15803D; background: #F0FDF4; color: #15803D; }
+
+    .trial-btn.failure { border-color: #F0B8B8; color: #B91C1C; }
+    .trial-btn.failure:hover { border-color: #B91C1C; background: #FEF2F2; color: #B91C1C; }
+    .trial-btn.failure.active { border-color: #B91C1C; box-shadow: 0 0 0 1px #B91C1C; background: #FEF2F2; color: #B91C1C; }
+
+    .trial-key {
+      display: flex;
+      gap: 1rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    .trial-key-swatch {
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 2px;
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+
+    .trial-key-swatch.success { background: #15803D; }
+    .trial-key-swatch.failure { background: #B91C1C; }
+
     .model-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -170,8 +200,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .model-col video {
+.model-col video {
       width: 100%;
+      aspect-ratio: 1 / 1;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: #000;
@@ -193,11 +224,13 @@
 
     .attention-row video {
       width: 100%;
+      height: auto;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: #000;
       display: block;
     }
+
 
     /* placeholder figure */
     .figure-placeholder {
@@ -214,7 +247,58 @@
       margin-top: 1.5rem;
     }
 
-/* ── footer ───────────────────────────────────────────────── */
+    /* ── libero viewer ───────────────────────────────────────── */
+    .task-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.25rem 0 1.25rem;
+    }
+
+    .task-row label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .task-select {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      padding: 0.38rem 2rem 0.38rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      flex: 1;
+      max-width: 540px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2378716C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.65rem center;
+    }
+
+    .task-select:focus { outline: none; border-color: var(--accent); }
+
+    .task-row { min-height: 2.2rem; }
+
+    .split-description { min-height: 1.5rem; }
+
+    /* ── single video viewer (drawanything-real) ──────────────── */
+    .single-viewer video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #000;
+      display: block;
+      margin-top: 1.25rem;
+    }
+
+    /* ── footer ───────────────────────────────────────────────── */
     footer {
       padding: 2.5rem 1.5rem;
       text-align: center;
@@ -245,7 +329,12 @@
   <section>
     <div class="container">
       <h2>DrawAnything-Real</h2>
-      <div class="figure-placeholder">[ Figure placeholder ]</div>
+      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>.</p>
+
+      <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp">
+        <div class="trial-btns"></div>
+        <video controls loop muted autoplay playsinline></video>
+      </div>
     </div>
   </section>
 
@@ -258,7 +347,8 @@
 
       <div class="trial-btns"
            data-task="drawanything_sim"
-           data-split="unseen_rollout">
+           data-split="unseen_rollout"
+           data-default-trial="f7">
       </div>
 
       <div class="model-grid">
@@ -287,7 +377,18 @@
   <section>
     <div class="container">
       <h2>LIBERO-Gen Combination</h2>
-      <div class="figure-placeholder">[ Figure placeholder ]</div>
+      <div class="libero-viewer" data-experiment="libero_combination" data-default-split="libero_spatial_selected_combinations_view">
+        <div class="trial-btns"></div>
+        <p class="split-label split-description"></p>
+        <div class="task-row">
+          <label>Task</label>
+          <select class="task-select"></select>
+        </div>
+        <div class="attention-row">
+          <h4>BPP Attention Map</h4>
+          <video controls loop muted autoplay playsinline></video>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -295,12 +396,51 @@
   <section>
     <div class="container">
       <h2>LIBERO-Gen Chain</h2>
-      <div class="figure-placeholder">[ Figure placeholder ]</div>
+      <div class="libero-viewer" data-experiment="libero_chain" data-default-split="libero_goal_chain_selected_view">
+        <div class="trial-btns"></div>
+        <p class="split-label split-description"></p>
+        <div class="task-row">
+          <label>Task</label>
+          <select class="task-select"></select>
+        </div>
+        <div class="attention-row">
+          <h4>BPP Attention Map</h4>
+          <video controls loop muted autoplay playsinline></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIBERO-GEN CHAIN (NO SECOND STEP) ─────────────────── -->
+  <section>
+    <div class="container">
+      <h2>LIBERO-Gen Chain (No Second Step)</h2>
+      <div class="libero-viewer" data-experiment="libero_chain_no_second_step" data-default-split="libero_goal_chain_selected_view">
+        <div class="trial-btns"></div>
+        <p class="split-label split-description"></p>
+        <div class="task-row">
+          <label>Task</label>
+          <select class="task-select"></select>
+        </div>
+        <div class="attention-row">
+          <h4>BPP Attention Map</h4>
+          <video controls loop muted autoplay playsinline></video>
+        </div>
+      </div>
     </div>
   </section>
 
 
   <script>
+    const SPLIT_DESCRIPTIONS = {
+      "libero_spatial_selected_combinations_inverse_view": "Training pick-place combinations — individual grasp and placement locations seen during training, but not the held-out joint combinations.",
+      "libero_spatial_selected_combinations_view":         "Unseen pick-place combinations — grasp and placement locations seen individually during training but <strong><em>never jointly</em></strong>, held out for test-time evaluation.",
+      "libero_goal_chain_firststep_view":                  "Training first-step tasks — single manipulation primitives including open drawer, push plate, turn on stove, and pick-place.",
+      "libero_goal_chain_secondstep_view":                 "Training second-step tasks — pick-place actions where the preceding first step has already been completed.",
+      "libero_goal_chain_selected_inverse_view":           "Training chained tasks — two-step sequences seen during training used to build up chaining capability.",
+      "libero_goal_chain_selected_view":                   "Unseen chained tasks — two-step sequences composed of individually seen manipulation skills, <strong><em>never seen chained together</em></strong> during training.",
+    };
+
     const MODELS = [
       { id: 'bpp',        label: 'BPP' },
       { id: 'icrt',       label: 'ICRT' },
@@ -311,16 +451,10 @@
       const encoded = encodeURIComponent(trial);
       MODELS.forEach(({ id }) => {
         const vid = document.getElementById(`vid-${task}-${id}`);
-        if (vid) {
-          vid.src = `media/results/${task}/${split}/${id}/${encoded}.mp4`;
-          vid.load();
-        }
+        if (vid) setVideoSrc(vid, `media/results/${task}/${split}/${id}/${encoded}.mp4`);
       });
       const attnVid = document.getElementById(`vid-${task}-bpp_attention`);
-      if (attnVid) {
-        attnVid.src = `media/results/${task}/${split}/bpp_attention/${encoded}.mp4`;
-        attnVid.load();
-      }
+      if (attnVid) setVideoSrc(attnVid, `media/results/${task}/${split}/bpp_attention/${encoded}.mp4`);
     }
 
     function initTrialButtons(btnRow, trials) {
@@ -328,11 +462,24 @@
       const split = btnRow.dataset.split;
 
       // trials is [{label, file}, ...]; label is the display name, file is the filename on disk
-      const defaultEntry = trials.find(t => t.label === 'f12') ?? trials[0];
+      const defaultFile  = btnRow.dataset.defaultTrial;
+      const defaultEntry = (defaultFile && trials.find(t => t.file === defaultFile)) ?? trials[0];
+
+      const hasOutcomes = trials.some(t => t.success !== undefined);
+      if (hasOutcomes) {
+        const key = document.createElement('div');
+        key.className = 'trial-key';
+        key.innerHTML =
+          '<span><span class="trial-key-swatch success"></span>BPP Success</span>' +
+          '<span><span class="trial-key-swatch failure"></span>BPP Failure</span>';
+        btnRow.insertAdjacentElement('afterend', key);
+      }
 
       trials.forEach(trial => {
         const btn = document.createElement('button');
-        btn.className = 'trial-btn' + (trial.file === defaultEntry.file ? ' active' : '');
+        btn.className = 'trial-btn'
+          + (trial.file === defaultEntry.file ? ' active' : '')
+          + (trial.success === false ? ' failure' : trial.success === true ? ' success' : '');
         btn.textContent = trial.label;
         btn.addEventListener('click', () => {
           btnRow.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
@@ -345,11 +492,126 @@
       loadTrial(task, split, defaultEntry.file);
     }
 
-    document.querySelectorAll('.trial-btns').forEach(btnRow => {
+    // ── LIBERO viewers ──────────────────────────────────────────
+    document.querySelectorAll('.libero-viewer').forEach(viewer => {
+      const experiment = viewer.dataset.experiment;
+      const video      = viewer.querySelector('video');
+      const splitBtns  = viewer.querySelector('.trial-btns');
+      const taskSelect = viewer.querySelector('.task-select');
+
+      function loadLiberoVideo(splitKey, taskFile) {
+        setVideoSrc(video, `media/results/${experiment}/bpp_attention/${splitKey}/${encodeURIComponent(taskFile)}.mp4`);
+      }
+
+      const descEl = viewer.querySelector('.split-description');
+
+      function activateSplit(split, allSplits) {
+        splitBtns.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
+        splitBtns.querySelector(`[data-split-key="${split.key}"]`)?.classList.add('active');
+        if (descEl) descEl.innerHTML = split.description || SPLIT_DESCRIPTIONS[split.key] || '';
+        taskSelect.innerHTML = '';
+        split.tasks.forEach(task => {
+          const opt = document.createElement('option');
+          opt.value       = task.file;
+          opt.textContent = task.label;
+          taskSelect.appendChild(opt);
+        });
+        if (split.tasks.length) loadLiberoVideo(split.key, split.tasks[0].file);
+      }
+
+      fetch(`media/results/${experiment}/manifest.json`)
+        .then(r => r.json())
+        .then(({ splits }) => {
+          splits.forEach((split, i) => {
+            const btn = document.createElement('button');
+            btn.className            = 'trial-btn' + (i === 0 ? ' active' : '');
+            btn.dataset.splitKey     = split.key;
+            btn.textContent          = split.label;
+            btn.addEventListener('click', () => activateSplit(split, splits));
+            splitBtns.appendChild(btn);
+          });
+
+          taskSelect.addEventListener('change', () => {
+            const activeKey = splitBtns.querySelector('.trial-btn.active')?.dataset.splitKey;
+            if (activeKey) loadLiberoVideo(activeKey, taskSelect.value);
+          });
+
+          const defaultKey = viewer.dataset.defaultSplit;
+          const initial = (defaultKey && splits.find(s => s.key === defaultKey)) ?? splits[0];
+          if (initial) activateSplit(initial, splits);
+
+          video.addEventListener('loadedmetadata', function lockHeight() {
+            requestAnimationFrame(() => {
+              if (!video.style.minHeight) video.style.minHeight = video.offsetHeight + 'px';
+            });
+          });
+        })
+        .catch(() => console.warn(`No manifest.json found for ${experiment}`));
+    });
+
+    function setVideoSrc(vid, src) {
+      // Freeze on the current frame while the new video loads
+      try {
+        const c = document.createElement('canvas');
+        c.width = vid.videoWidth; c.height = vid.videoHeight;
+        c.getContext('2d').drawImage(vid, 0, 0);
+        vid.poster = c.toDataURL();
+      } catch(e) {}
+      vid.src = src;
+      vid.load();
+      vid.addEventListener('loadeddata', () => { vid.poster = ''; }, { once: true });
+    }
+
+    // ── Video controls: hide until hover ─────────────────────────
+    document.querySelectorAll('video').forEach(v => {
+      v.removeAttribute('controls');
+      v.addEventListener('mouseenter', () => v.controls = true);
+      v.addEventListener('mouseleave', () => v.controls = false);
+    });
+
+    // ── Single video viewers (e.g. DrawAnything-Real) ────────────
+    document.querySelectorAll('.single-viewer').forEach(viewer => {
+      const base  = viewer.dataset.base;
+      const video = viewer.querySelector('video');
+      const btns  = viewer.querySelector('.trial-btns');
+
+      fetch(`${base}/trials.json`)
+        .then(r => r.json())
+        .then(trials => {
+          const defaultEntry = trials[0];
+          trials.forEach(trial => {
+            const btn = document.createElement('button');
+            btn.className = 'trial-btn' + (trial.file === defaultEntry.file ? ' active' : '');
+            btn.textContent = trial.label;
+            btn.addEventListener('click', () => {
+              btns.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              setVideoSrc(video, `${base}/${encodeURIComponent(trial.file)}.mp4`);
+            });
+            btns.appendChild(btn);
+          });
+          video.src = `${base}/${encodeURIComponent(defaultEntry.file)}.mp4`;
+        })
+        .catch(() => console.warn(`No trials.json found at ${base}`));
+    });
+
+    // ── Draw Anything viewers ────────────────────────────────────
+    document.querySelectorAll('.trial-btns[data-task]').forEach(btnRow => {
       const { task, split } = btnRow.dataset;
+      const cacheKey = `trial-btns-h-${task}-${split}`;
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) btnRow.style.minHeight = cached;
+
       fetch(`media/results/${task}/${split}/trials.json`)
         .then(r => r.json())
-        .then(trials => initTrialButtons(btnRow, trials))
+        .then(trials => {
+          initTrialButtons(btnRow, trials);
+          requestAnimationFrame(() => {
+            const h = btnRow.offsetHeight + 'px';
+            btnRow.style.minHeight = h;
+            localStorage.setItem(cacheKey, h);
+          });
+        })
         .catch(() => console.warn(`No trials.json found for ${task}/${split}`));
     });
   </script>
