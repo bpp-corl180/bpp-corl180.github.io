@@ -83,17 +83,38 @@ ATTENTION_KEY_PREFIX = "eval/test/attention_map/"
 
 def clean_trial_name(wandb_key: str) -> str:
     """
-    Turn a raw wandb key into a short clean trial name.
+    Turn a raw wandb key into a short clean trial name (display label).
 
     Examples:
         eval/test/videos/draw_long4_giraffe_lower_seed_10000  →  giraffe
         eval/test/videos/draw_w_lower_seed_10000              →  w
     """
-    name = wandb_key.rsplit("/", 1)[-1]           # take filename component
-    name = re.sub(r"_(lower|upper)_seed_\d+$", "", name)  # strip _lower/upper_seed_XXXXX
-    name = re.sub(r"^draw_", "", name)            # strip draw_ prefix
-    name = re.sub(r"^(long|short)\d*_", "", name) # strip long4_ / short_ modifier
+    name = wandb_key.rsplit("/", 1)[-1]
+    name = re.sub(r"_(lower|upper)_seed_\d+$", "", name)
+    name = re.sub(r"^draw_", "", name)
+    name = re.sub(r"^(long|short)\d*_", "", name)
     return name.strip("_")
+
+
+def safe_filenames(labels: list[str]) -> dict[str, str]:
+    """
+    Return {label: safe_filename} handling case-insensitive filesystem conflicts.
+    e.g. 'Q' → 'Q_upper', 'q' → 'q_lower' when both exist; otherwise label == filename.
+    """
+    from collections import Counter
+    colliding = {lw for lw, n in Counter(l.lower() for l in labels).items() if n > 1}
+    result: dict[str, str] = {}
+    for label in labels:
+        if label.lower() in colliding:
+            if label.isupper():
+                result[label] = label + "_upper"
+            elif label.islower():
+                result[label] = label + "_lower"
+            else:
+                result[label] = label  # mixed-case, no standard suffix
+        else:
+            result[label] = label
+    return result
 
 
 # ── wandb helpers ─────────────────────────────────────────────────────────────
@@ -128,19 +149,21 @@ def download_entries(
     entries: dict[str, dict],
     out_dir: Path,
     desc: str,
-) -> list[str]:
-    """Download video entries to out_dir. Returns list of written trial names."""
+) -> list[dict[str, str]]:
+    """Download video entries to out_dir. Returns [{label, file}] manifest sorted by label."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    written: list[str] = []
+
+    labels    = [clean_trial_name(k) for k in entries]
+    file_map  = safe_filenames(labels)
+    manifest: list[dict[str, str]] = []
 
     for key, meta in tqdm(entries.items(), desc=f"  {desc}", unit="file", ncols=80):
-        trial      = clean_trial_name(key)
-        dest       = out_dir / f"{trial}.mp4"
-        wandb_path = meta["path"]
-        download_wandb_file(run, wandb_path, dest)
-        written.append(trial)
+        label = clean_trial_name(key)
+        safe  = file_map[label]
+        download_wandb_file(run, meta["path"], out_dir / f"{safe}.mp4")
+        manifest.append({"label": label, "file": safe})
 
-    return sorted(written)
+    return sorted(manifest, key=lambda x: x["label"])
 
 
 # ── Per-run download ──────────────────────────────────────────────────────────
@@ -149,7 +172,7 @@ def process_run(
     run_path: str,
     model_id: str,
     api: wandb.Api,
-) -> list[str]:
+) -> list[dict[str, str]]:
     print(f"\n{'─' * 64}")
     print(f"  model  : {model_id}")
     print(f"  run    : {run_path}")
@@ -226,12 +249,12 @@ def main() -> None:
                 shutil.rmtree(d)
 
     api = wandb.Api()
-    all_trials: list[str] = []
+    all_trials: list[dict[str, str]] = []
 
     for model_id, run_path in runs.items():
         trials = process_run(run_path, model_id, api)
         if trials and not all_trials:
-            all_trials = trials  # use first model's trials as canonical list
+            all_trials = trials  # use first model's trials as canonical manifest
 
     # ── Summary ───────────────────────────────────────────────────
     print(f"\n{'=' * 64}")

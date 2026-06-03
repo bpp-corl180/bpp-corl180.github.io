@@ -327,20 +327,22 @@
       const task  = btnRow.dataset.task;
       const split = btnRow.dataset.split;
 
-      const defaultTrial = trials.includes('f12') ? 'f12' : trials[0];
-      trials.forEach((trial, i) => {
+      // trials is [{label, file}, ...]; label is the display name, file is the filename on disk
+      const defaultEntry = trials.find(t => t.label === 'f12') ?? trials[0];
+
+      trials.forEach(trial => {
         const btn = document.createElement('button');
-        btn.className = 'trial-btn' + (trial === defaultTrial ? ' active' : '');
-        btn.textContent = trial;
+        btn.className = 'trial-btn' + (trial.file === defaultEntry.file ? ' active' : '');
+        btn.textContent = trial.label;
         btn.addEventListener('click', () => {
           btnRow.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          loadTrial(task, split, trial);
+          loadTrial(task, split, trial.file);
         });
         btnRow.appendChild(btn);
       });
 
-      loadTrial(task, split, defaultTrial);
+      loadTrial(task, split, defaultEntry.file);
     }
 
     document.querySelectorAll('.trial-btns').forEach(btnRow => {
