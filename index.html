@@ -1,1 +1,356 @@
-Behavior Prompting Policy website for CoRL submission!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behavior Prompting Policy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ── tokens ───────────────────────────────────────────────── */
+    :root {
+      --bg:          #FAF8F4;
+      --surface:     #FFFFFF;
+      --border:      #E8E4DC;
+      --text:        #1C1917;
+      --text-muted:  #78716C;
+      --accent:      #3B5CC4;
+      --accent-pale: #EEF1FB;
+      --max-w:       860px;
+      --radius:      10px;
+    }
+
+    /* ── reset ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ── layout helpers ───────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── hero / header ────────────────────────────────────────── */
+    header {
+      padding: 5rem 0 0;
+      text-align: center;
+    }
+
+    header .container {
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5.5vw, 3.2rem);
+      line-height: 1.25;
+      color: var(--text);
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    h1 .subtitle {
+      font-size: 0.75em;
+      color: var(--text);
+      display: block;
+      margin-top: 0.2em;
+    }
+
+    /* ── sections ─────────────────────────────────────────────── */
+    section {
+      padding: 4rem 0;
+    }
+
+    section:not(:last-of-type) .container {
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:not(:last-of-type) {
+      padding-bottom: 0;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.6rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 2.5rem; height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+
+    .split-label {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin: 1.25rem 0 0;
+      max-width: none;
+    }
+
+    /* ── video result viewer ──────────────────────────────────── */
+    .trial-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .trial-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.85rem;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color 0.12s, color 0.12s, background 0.12s;
+    }
+
+    .trial-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .trial-btn.active {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+      color: var(--accent);
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .model-col h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .model-col video {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #000;
+      display: block;
+    }
+
+    .attention-row {
+      margin-top: 1.5rem;
+    }
+
+    .attention-row h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .attention-row video {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #000;
+      display: block;
+    }
+
+    /* placeholder figure */
+    .figure-placeholder {
+      width: 100%;
+      height: 280px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 1.5rem;
+    }
+
+/* ── footer ───────────────────────────────────────────────── */
+    footer {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <header>
+    <div class="container">
+      <h1>Behavior Prompting Policy<br /><span class="subtitle">Demonstrations as Prompts for Manipulation</span></h1>
+    </div>
+  </header>
+
+  <!-- ── LAUNDRY FOLDING ────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>Laundry Folding</h2>
+      <div class="figure-placeholder">[ Figure placeholder ]</div>
+    </div>
+  </section>
+
+  <!-- ── DRAWANYTHING-REAL ───────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>DrawAnything-Real</h2>
+      <div class="figure-placeholder">[ Figure placeholder ]</div>
+    </div>
+  </section>
+
+  <!-- ── DRAWANYTHING-SIM ────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>DrawAnything-Sim</h2>
+
+      <p class="split-label">Results on drawings not seen during training</p>
+
+      <div class="trial-btns"
+           data-task="drawanything_sim"
+           data-split="unseen_rollout">
+      </div>
+
+      <div class="model-grid">
+        <div class="model-col">
+          <h4>Goal Image</h4>
+          <video id="vid-drawanything_sim-goal_image" controls loop muted autoplay playsinline></video>
+        </div>
+        <div class="model-col">
+          <h4>ICRT</h4>
+          <video id="vid-drawanything_sim-icrt" controls loop muted autoplay playsinline></video>
+        </div>
+        <div class="model-col">
+          <h4>BPP (Ours)</h4>
+          <video id="vid-drawanything_sim-bpp" controls loop muted autoplay playsinline></video>
+        </div>
+      </div>
+
+      <div class="attention-row">
+        <h4>BPP Attention Map</h4>
+        <video id="vid-drawanything_sim-bpp_attention" controls loop muted autoplay playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIBERO-GEN COMBINATION ─────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>LIBERO-Gen Combination</h2>
+      <div class="figure-placeholder">[ Figure placeholder ]</div>
+    </div>
+  </section>
+
+  <!-- ── LIBERO-GEN CHAIN ───────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <h2>LIBERO-Gen Chain</h2>
+      <div class="figure-placeholder">[ Figure placeholder ]</div>
+    </div>
+  </section>
+
+
+  <script>
+    const MODELS = [
+      { id: 'bpp',        label: 'BPP' },
+      { id: 'icrt',       label: 'ICRT' },
+      { id: 'goal_image', label: 'Goal Image' },
+    ];
+
+    function loadTrial(task, split, trial) {
+      const encoded = encodeURIComponent(trial);
+      MODELS.forEach(({ id }) => {
+        const vid = document.getElementById(`vid-${task}-${id}`);
+        if (vid) {
+          vid.src = `media/results/${task}/${split}/${id}/${encoded}.mp4`;
+          vid.load();
+        }
+      });
+      const attnVid = document.getElementById(`vid-${task}-bpp_attention`);
+      if (attnVid) {
+        attnVid.src = `media/results/${task}/${split}/bpp_attention/${encoded}.mp4`;
+        attnVid.load();
+      }
+    }
+
+    function initTrialButtons(btnRow, trials) {
+      const task  = btnRow.dataset.task;
+      const split = btnRow.dataset.split;
+
+      const defaultTrial = trials.includes('f12') ? 'f12' : trials[0];
+      trials.forEach((trial, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'trial-btn' + (trial === defaultTrial ? ' active' : '');
+        btn.textContent = trial;
+        btn.addEventListener('click', () => {
+          btnRow.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          loadTrial(task, split, trial);
+        });
+        btnRow.appendChild(btn);
+      });
+
+      loadTrial(task, split, defaultTrial);
+    }
+
+    document.querySelectorAll('.trial-btns').forEach(btnRow => {
+      const { task, split } = btnRow.dataset;
+      fetch(`media/results/${task}/${split}/trials.json`)
+        .then(r => r.json())
+        .then(trials => initTrialButtons(btnRow, trials))
+        .catch(() => console.warn(`No trials.json found for ${task}/${split}`));
+    });
+  </script>
+
+</body>
+</html>
