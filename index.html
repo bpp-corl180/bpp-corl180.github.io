@@ -118,6 +118,49 @@
       max-width: 680px;
     }
 
+.video-header-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin: 0.5rem 0 0.5rem;
+    }
+
+    .video-header-row .prompt-heading,
+    .video-header-row .speed-tag {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .speed-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .prompt-heading {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0.5rem 0 0.5rem;
+    }
+
+    .prompt-row video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: #000;
+      display: block;
+    }
+
+    .trial-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .trial-caption:empty { display: none; }
+
     .split-label {
       font-size: 0.9rem;
 
@@ -163,6 +206,22 @@
     .trial-btn.failure { border-color: #F0B8B8; color: #B91C1C; }
     .trial-btn.failure:hover { border-color: #B91C1C; background: #FEF2F2; color: #B91C1C; }
     .trial-btn.failure.active { border-color: #B91C1C; box-shadow: 0 0 0 1px #B91C1C; background: #FEF2F2; color: #B91C1C; }
+
+    .autoplay-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin: -0.25rem 0 0.5rem;
+      user-select: none;
+    }
+
+    .autoplay-label input[type="checkbox"] {
+      cursor: pointer;
+      accent-color: var(--accent);
+    }
 
     .trial-key {
       display: flex;
@@ -211,6 +270,10 @@
 
     .attention-row {
       margin-top: 1.5rem;
+    }
+
+    .libero-viewer .attention-row {
+      margin-top: 0;
     }
 
     .attention-row h4 {
@@ -295,7 +358,7 @@
       border: 1px solid var(--border);
       background: #000;
       display: block;
-      margin-top: 1.25rem;
+      margin-top: 0.3rem;
     }
 
     /* ── footer ───────────────────────────────────────────────── */
@@ -329,11 +392,23 @@
   <section>
     <div class="container">
       <h2>DrawAnything-Real</h2>
-      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>.</p>
+      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. At test time, BPP is provided with a single human demonstration for the new drawing task as input. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
 
       <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp">
         <div class="trial-btns"></div>
+        <div class="video-header-row">
+          <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
+          <span class="speed-tag">3× speed</span>
+          <span class="trial-caption"></span>
+        </div>
         <video controls loop muted autoplay playsinline></video>
+        <div class="prompt-row" style="display:none">
+          <div class="video-header-row">
+            <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+            <span class="speed-tag">3× speed</span>
+          </div>
+          <video class="prompt-video" controls loop muted autoplay playsinline></video>
+        </div>
       </div>
     </div>
   </section>
@@ -343,7 +418,7 @@
     <div class="container">
       <h2>DrawAnything-Sim</h2>
 
-      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. The red drawing is the ground truth displayed for reference; it is not visible to the models. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image.</p>
+      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. The red drawing is the ground truth displayed for reference; it is not visible to the policy. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The behavior prompt is a single demonstration collectd by a human using a mouse. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image.</p>
 
       <div class="trial-btns"
            data-task="drawanything_sim"
@@ -432,7 +507,7 @@
 
 
   <script>
-    const SPLIT_DESCRIPTIONS = {
+const SPLIT_DESCRIPTIONS = {
       "libero_spatial_selected_combinations_inverse_view": "Training pick-place combinations — individual grasp and placement locations seen during training, but not the held-out joint combinations.",
       "libero_spatial_selected_combinations_view":         "Unseen pick-place combinations — grasp and placement locations seen individually during training but <strong><em>never jointly</em></strong>, held out for test-time evaluation.",
       "libero_goal_chain_firststep_view":                  "Training first-step tasks — single manipulation primitives including open drawer, push plate, turn on stove, and pick-place.",
@@ -490,6 +565,11 @@
       });
 
       loadTrial(task, split, defaultEntry.file);
+
+      const modelVids = MODELS.map(({ id }) => document.getElementById(`vid-${task}-${id}`)).filter(Boolean);
+      const attnVid   = document.getElementById(`vid-${task}-bpp_attention`);
+      const allVids   = attnVid ? [...modelVids, attnVid] : modelVids;
+      if (allVids.length) setupSyncedVideos(btnRow, allVids);
     }
 
     // ── LIBERO viewers ──────────────────────────────────────────
@@ -540,6 +620,29 @@
           const initial = (defaultKey && splits.find(s => s.key === defaultKey)) ?? splits[0];
           if (initial) activateSplit(initial, splits);
 
+          // Autoplay through tasks
+          const autoLabel = document.createElement('label');
+          autoLabel.className = 'autoplay-label';
+          autoLabel.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
+          taskSelect.closest('.task-row').insertAdjacentElement('afterend', autoLabel);
+          const autoCheck = autoLabel.querySelector('input');
+
+          function advanceTask() {
+            const next = (taskSelect.selectedIndex + 1) % taskSelect.options.length;
+            taskSelect.selectedIndex = next;
+            taskSelect.dispatchEvent(new Event('change'));
+          }
+
+          autoCheck.addEventListener('change', () => {
+            if (autoCheck.checked) {
+              video.loop = false;
+              video.addEventListener('ended', advanceTask);
+            } else {
+              video.loop = true;
+              video.removeEventListener('ended', advanceTask);
+            }
+          });
+
           video.addEventListener('loadedmetadata', function lockHeight() {
             requestAnimationFrame(() => {
               if (!video.style.minHeight) video.style.minHeight = video.offsetHeight + 'px';
@@ -548,6 +651,41 @@
         })
         .catch(() => console.warn(`No manifest.json found for ${experiment}`));
     });
+
+    function setupSyncedVideos(btnRow, videos) {
+      if (!Array.isArray(videos)) videos = [videos];
+
+      // Always non-looping — restart all in sync, or advance if autoplay is on
+      videos.forEach(v => v.loop = false);
+
+      let autoplayOn = false;
+      let ended = new Set();
+
+      function onEnded(e) {
+        ended.add(e.target);
+        const active = videos.filter(v => v.src);
+        if (ended.size >= active.length) {
+          ended.clear();
+          if (autoplayOn) {
+            const btns = [...btnRow.querySelectorAll('.trial-btn')];
+            const idx = btns.findIndex(b => b.classList.contains('active'));
+            btns[(idx + 1) % btns.length].click();
+          } else {
+            active.forEach(v => v.play());
+          }
+        }
+      }
+
+      videos.forEach(v => v.addEventListener('ended', onEnded));
+
+      const label = document.createElement('label');
+      label.className = 'autoplay-label';
+      label.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
+      btnRow.insertAdjacentElement('afterend', label);
+
+      const checkbox = label.querySelector('input');
+      checkbox.addEventListener('change', () => { autoplayOn = checkbox.checked; });
+    }
 
     function setVideoSrc(vid, src) {
       // Freeze on the current frame while the new video loads
@@ -562,35 +700,84 @@
       vid.addEventListener('loadeddata', () => { vid.poster = ''; }, { once: true });
     }
 
-    // ── Video controls: hide until hover ─────────────────────────
+    // ── Video controls ────────────────────────────────────────────
+    const simSection = document.querySelector('[data-task="drawanything_sim"]')?.closest('section');
     document.querySelectorAll('video').forEach(v => {
       v.removeAttribute('controls');
-      v.addEventListener('mouseenter', () => v.controls = true);
-      v.addEventListener('mouseleave', () => v.controls = false);
+      if (!simSection?.contains(v)) {
+        // All sections except DrawAnything-Sim: show controls on hover
+        v.addEventListener('mouseenter', () => v.controls = true);
+        v.addEventListener('mouseleave', () => v.controls = false);
+      }
+      // DrawAnything-Sim: never show controls
     });
 
     // ── Single video viewers (e.g. DrawAnything-Real) ────────────
     document.querySelectorAll('.single-viewer').forEach(viewer => {
-      const base  = viewer.dataset.base;
-      const video = viewer.querySelector('video');
-      const btns  = viewer.querySelector('.trial-btns');
+      const base       = viewer.dataset.base;
+      const promptBase = base.replace(/\/bpp$/, '/prompt');
+      const video      = viewer.querySelector('video:not(.prompt-video)');
+      const btns       = viewer.querySelector('.trial-btns');
+      const captionEl  = viewer.querySelector('.trial-caption');
+      const promptRow  = viewer.querySelector('.prompt-row');
+      const promptVid  = viewer.querySelector('.prompt-video');
+
+      function updatePrompt(trial) {
+        if (trial.prompt && promptRow && promptVid) {
+          promptRow.style.display = '';
+          setVideoSrc(promptVid, `${promptBase}/${encodeURIComponent(trial.prompt)}.mp4`);
+        } else if (promptRow) {
+          promptRow.style.display = 'none';
+        }
+      }
 
       fetch(`${base}/trials.json`)
         .then(r => r.json())
         .then(trials => {
           const defaultEntry = trials[0];
+
+          const hasOutcomes = trials.some(t => t.success !== undefined);
+          if (hasOutcomes) {
+            const key = document.createElement('div');
+            key.className = 'trial-key';
+            key.innerHTML =
+              '<span><span class="trial-key-swatch success"></span>BPP Success</span>' +
+              '<span><span class="trial-key-swatch failure"></span>BPP Failure</span>';
+            btns.insertAdjacentElement('afterend', key);
+          }
+
           trials.forEach(trial => {
             const btn = document.createElement('button');
-            btn.className = 'trial-btn' + (trial.file === defaultEntry.file ? ' active' : '');
+            btn.className = 'trial-btn'
+              + (trial.file === defaultEntry.file ? ' active' : '')
+              + (trial.success === false ? ' failure' : trial.success === true ? ' success' : '');
             btn.textContent = trial.label;
             btn.addEventListener('click', () => {
               btns.querySelectorAll('.trial-btn').forEach(b => b.classList.remove('active'));
               btn.classList.add('active');
               setVideoSrc(video, `${base}/${encodeURIComponent(trial.file)}.mp4`);
+              if (captionEl) captionEl.textContent = trial.caption ?? '';
+              updatePrompt(trial);
             });
             btns.appendChild(btn);
           });
           video.src = `${base}/${encodeURIComponent(defaultEntry.file)}.mp4`;
+          if (captionEl) captionEl.textContent = defaultEntry.caption ?? '';
+          updatePrompt(defaultEntry);
+          // Single video: loop normally, advance on autoplay
+          const autoLabelSingle = document.createElement('label');
+          autoLabelSingle.className = 'autoplay-label';
+          autoLabelSingle.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
+          btns.insertAdjacentElement('afterend', autoLabelSingle);
+          const autoCheckSingle = autoLabelSingle.querySelector('input');
+          function advanceSingle() {
+            const bs = [...btns.querySelectorAll('.trial-btn')];
+            bs[(bs.findIndex(b => b.classList.contains('active')) + 1) % bs.length].click();
+          }
+          autoCheckSingle.addEventListener('change', () => {
+            if (autoCheckSingle.checked) { video.loop = false; video.addEventListener('ended', advanceSingle); }
+            else { video.loop = true; video.removeEventListener('ended', advanceSingle); }
+          });
         })
         .catch(() => console.warn(`No trials.json found at ${base}`));
     });
@@ -598,19 +785,11 @@
     // ── Draw Anything viewers ────────────────────────────────────
     document.querySelectorAll('.trial-btns[data-task]').forEach(btnRow => {
       const { task, split } = btnRow.dataset;
-      const cacheKey = `trial-btns-h-${task}-${split}`;
-      const cached = localStorage.getItem(cacheKey);
-      if (cached) btnRow.style.minHeight = cached;
 
       fetch(`media/results/${task}/${split}/trials.json`)
         .then(r => r.json())
         .then(trials => {
           initTrialButtons(btnRow, trials);
-          requestAnimationFrame(() => {
-            const h = btnRow.offsetHeight + 'px';
-            btnRow.style.minHeight = h;
-            localStorage.setItem(cacheKey, h);
-          });
         })
         .catch(() => console.warn(`No trials.json found for ${task}/${split}`));
     });

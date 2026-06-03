@@ -1,7 +1,12 @@
 [
-  {"label": "8", "file": "8"},
-  {"label": "A", "file": "A"},
-  {"label": "&", "file": "ampersand"},
-  {"label": "B", "file": "B"},
-  {"label": "star", "file": "star"}
+  {"label": "8",             "file": "8",            "success": true,  "prompt": "8"},
+  {"label": "A",             "file": "A",            "success": true,  "prompt": "A"},
+  {"label": "A",             "file": "A_fail_1",     "success": false, "prompt": "A", "caption": "Policy unexpectedly lifts pen after first stroke, making the policy think that it's ready to draw the sideways stroke rather than the diagonal stroke."},
+  {"label": "A",             "file": "A_fail_2",     "success": false, "prompt": "A", "caption": "Sometimes pen up motions make the policy think the drawing is done, so the arm retreats too early."},
+  {"label": "&",             "file": "ampersand",    "success": true,  "prompt": "ampersand"},
+  {"label": "B",             "file": "B",            "success": true,  "prompt": "B"},
+  {"label": "#",             "file": "hashtag_fail_1","success": false, "prompt": "hashtag", "caption": "Sometimes pen up motions make the policy think the drawing is done, so the arm retreats too early."},
+  {"label": "#",             "file": "hashtag_fail_2","success": false, "prompt": "hashtag", "caption": "Policy fails to lift pen between strokes, causing the policy to fall OOD and start to draw incorrectly."},
+  {"label": "star",          "file": "star",         "success": true,  "prompt": "star"},
+  {"label": "stickman",      "file": "stickman_fail_1","success": false,"prompt": "stickman","caption": "Prior policy mistakes can lead to OOD issues that cause compounding errors."}
 ]
