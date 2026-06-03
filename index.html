@@ -120,7 +120,7 @@
 
     .split-label {
       font-size: 0.9rem;
-      font-style: italic;
+
       color: var(--text-muted);
       margin: 1.25rem 0 0;
       max-width: none;
@@ -254,7 +254,7 @@
     <div class="container">
       <h2>DrawAnything-Sim</h2>
 
-      <p class="split-label">Results on drawings not seen during training</p>
+      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. The red drawing is the ground truth displayed for reference; it is not visible to the models. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image.</p>
 
       <div class="trial-btns"
            data-task="drawanything_sim"
