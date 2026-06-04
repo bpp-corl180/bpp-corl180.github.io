@@ -174,7 +174,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0 1.25rem;
+      margin: 1rem 0 0.5rem;
       min-height: 2rem;
     }
 
@@ -214,7 +214,7 @@
       font-size: 0.8rem;
       color: var(--text-muted);
       cursor: pointer;
-      margin: -0.25rem 0 0.5rem;
+      margin: 0 0 1rem;
       user-select: none;
     }
 
@@ -226,7 +226,7 @@
     .trial-key {
       display: flex;
       gap: 1rem;
-      margin-top: -0.5rem;
+      margin-top: 0.25rem;
       margin-bottom: 1.25rem;
       font-size: 0.75rem;
       color: var(--text-muted);
@@ -243,6 +243,27 @@
 
     .trial-key-swatch.success { background: #15803D; }
     .trial-key-swatch.failure { background: #B91C1C; }
+
+    /* LIBERO split type button styles */
+    .trial-btn.split-train  { border-color: #93A8D4; color: #3B5CC4; }
+    .trial-btn.split-train:hover  { border-color: #3B5CC4; background: var(--accent-pale); color: #3B5CC4; }
+    .trial-btn.split-train.active { border-color: #3B5CC4; box-shadow: 0 0 0 1px #3B5CC4; background: var(--accent-pale); color: #3B5CC4; }
+
+    .trial-btn.split-unseen  { border-color: #FDBA74; color: #EA6C1A; }
+    .trial-btn.split-unseen:hover  { border-color: #EA6C1A; background: #FFF7ED; color: #EA6C1A; }
+    .trial-btn.split-unseen.active { border-color: #EA6C1A; box-shadow: 0 0 0 1px #EA6C1A; background: #FFF7ED; color: #EA6C1A; }
+
+    .trial-btn.split-excluded {
+      border-color: var(--border);
+      color: var(--text-muted);
+      opacity: 0.45;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .trial-key-swatch.split-train-swatch   { background: #3B5CC4; }
+    .trial-key-swatch.split-unseen-swatch  { background: #EA6C1A; }
+    .trial-key-swatch.split-excluded-swatch { background: var(--text-muted); text-decoration: line-through; opacity: 0.45; }
 
     .model-grid {
       display: grid;
@@ -310,6 +331,20 @@
       margin-top: 1.5rem;
     }
 
+    /* ── libero subsections ──────────────────────────────────── */
+    .libero-subsection {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .libero-subsection h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
     /* ── libero viewer ───────────────────────────────────────── */
     .task-row {
       display: flex;
@@ -337,7 +372,7 @@
       color: var(--text);
       cursor: pointer;
       flex: 1;
-      max-width: 540px;
+      width: 100%;
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2378716C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
@@ -389,127 +424,153 @@
   </section>
 
   <!-- ── DRAWANYTHING-REAL ───────────────────────────────────── -->
+  <!-- ── DRAWANYTHING ──────────────────────────────────────── -->
   <section>
     <div class="container">
-      <h2>DrawAnything-Real</h2>
-      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. At test time, BPP is provided with a single human demonstration for the new drawing task as input. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
+      <h2>DrawAnything</h2>
+      <p>We evaluate behavior prompting on a free-form drawing task where the robot must replicate a novel drawing given a single human demonstration as a behavior prompt. Drawing is well suited for studying behavior prompting as it requires the policy to continuously refernece the prompt to adapt its low-level actions. Results are shown on drawings <strong><em>not seen during training</em></strong>.</p>
 
-      <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp">
-        <div class="trial-btns"></div>
-        <div class="video-header-row">
-          <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
-          <span class="speed-tag">3× speed</span>
-          <span class="trial-caption"></span>
-        </div>
-        <video controls loop muted autoplay playsinline></video>
-        <div class="prompt-row" style="display:none">
+      <!-- Real -->
+      <div class="libero-subsection">
+        <h3>DrawAnything Real</h3>
+        <p>At test time, BPP is provided with a single human drawing demonstration collected using iPhUMI. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
+
+        <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
+          <div class="trial-btns"></div>
           <div class="video-header-row">
-            <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+            <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
             <span class="speed-tag">3× speed</span>
+            <span class="trial-caption"></span>
           </div>
-          <video class="prompt-video" controls loop muted autoplay playsinline></video>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DRAWANYTHING-SIM ────────────────────────────────────── -->
-  <section>
-    <div class="container">
-      <h2>DrawAnything-Sim</h2>
-
-      <p class="split-label">Results on drawings <strong><em>not seen during training</em></strong>. The red drawing is the ground truth displayed for reference; it is not visible to the policy. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The behavior prompt is a single demonstration collectd by a human using a mouse. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image.</p>
-
-      <div class="trial-btns"
-           data-task="drawanything_sim"
-           data-split="unseen_rollout"
-           data-default-trial="f7">
-      </div>
-
-      <div class="model-grid">
-        <div class="model-col">
-          <h4>Goal Image</h4>
-          <video id="vid-drawanything_sim-goal_image" controls loop muted autoplay playsinline></video>
-        </div>
-        <div class="model-col">
-          <h4>ICRT</h4>
-          <video id="vid-drawanything_sim-icrt" controls loop muted autoplay playsinline></video>
-        </div>
-        <div class="model-col">
-          <h4>BPP (Ours)</h4>
-          <video id="vid-drawanything_sim-bpp" controls loop muted autoplay playsinline></video>
+          <video controls loop muted autoplay playsinline></video>
+          <div class="prompt-row" style="display:none">
+            <div class="video-header-row">
+              <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+              <span class="speed-tag">3× speed</span>
+            </div>
+            <video class="prompt-video" controls loop muted autoplay playsinline></video>
+          </div>
         </div>
       </div>
 
-      <div class="attention-row">
-        <h4>BPP Attention Map</h4>
-        <video id="vid-drawanything_sim-bpp_attention" controls loop muted autoplay playsinline></video>
-      </div>
-    </div>
-  </section>
+      <!-- Sim -->
+      <div class="libero-subsection">
+        <h3>DrawAnything Sim</h3>
+        <p>The red drawing is the ground truth displayed for reference; it is not visible to the policy. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The behavior prompt is a single human demonstration collected using a mouse. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image of the demonstration.</p>
 
-  <!-- ── LIBERO-GEN COMBINATION ─────────────────────────────── -->
-  <section>
-    <div class="container">
-      <h2>LIBERO-Gen Combination</h2>
-      <div class="libero-viewer" data-experiment="libero_combination" data-default-split="libero_spatial_selected_combinations_view">
-        <div class="trial-btns"></div>
-        <p class="split-label split-description"></p>
-        <div class="task-row">
-          <label>Task</label>
-          <select class="task-select"></select>
+        <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
+        <div class="trial-btns"
+             data-task="drawanything_sim"
+             data-split="unseen_rollout"
+             data-default-trial="f7">
         </div>
+
+        <div class="model-grid">
+          <div class="model-col">
+            <h4>Goal Image</h4>
+            <video id="vid-drawanything_sim-goal_image" controls loop muted autoplay playsinline></video>
+          </div>
+          <div class="model-col">
+            <h4>ICRT</h4>
+            <video id="vid-drawanything_sim-icrt" controls loop muted autoplay playsinline></video>
+          </div>
+          <div class="model-col">
+            <h4>BPP (Ours)</h4>
+            <video id="vid-drawanything_sim-bpp" controls loop muted autoplay playsinline></video>
+          </div>
+        </div>
+
         <div class="attention-row">
           <h4>BPP Attention Map</h4>
-          <video controls loop muted autoplay playsinline></video>
+          <video id="vid-drawanything_sim-bpp_attention" controls loop muted autoplay playsinline></video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── LIBERO-GEN CHAIN ───────────────────────────────────── -->
+  <!-- ── LIBERO-GEN ─────────────────────────────────────────── -->
   <section>
     <div class="container">
-      <h2>LIBERO-Gen Chain</h2>
-      <div class="libero-viewer" data-experiment="libero_chain" data-default-split="libero_goal_chain_selected_view">
-        <div class="trial-btns"></div>
-        <p class="split-label split-description"></p>
-        <div class="task-row">
-          <label>Task</label>
-          <select class="task-select"></select>
-        </div>
-        <div class="attention-row">
-          <h4>BPP Attention Map</h4>
-          <video controls loop muted autoplay playsinline></video>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2>LIBERO-Gen</h2>
+      <p>The purpose of the LIBERO-Gen benchmarks is to evaluate test-time adaptation to new tasks. By new tasks we do not mean entirely new action primitives. Instead, we define new tasks as unseen compositions of existing mainpulation primitives. We structure our LIBERO-Gen experiments to evaluate if models can follow new instructions to complete these unseen compositions.</p>
 
-  <!-- ── LIBERO-GEN CHAIN (NO SECOND STEP) ─────────────────── -->
-  <section>
-    <div class="container">
-      <h2>LIBERO-Gen Chain (No Second Step)</h2>
-      <div class="libero-viewer" data-experiment="libero_chain_no_second_step" data-default-split="libero_goal_chain_selected_view">
-        <div class="trial-btns"></div>
-        <p class="split-label split-description"></p>
-        <div class="task-row">
-          <label>Task</label>
-          <select class="task-select"></select>
-        </div>
-        <div class="attention-row">
-          <h4>BPP Attention Map</h4>
-          <video controls loop muted autoplay playsinline></video>
+      <!-- Combination -->
+      <div class="libero-subsection">
+        <h3>LIBERO-Gen Combination</h3>
+        <p>In this benchmark we have one environment containing two identical bowls that are placed at varying initial locations in the scene. The policy is instructed to pick one of the two bowls and then place that bowl in an instructed target location. We train on many pick-place location combinations and evaluate on unseen pick-place combinations at test-time.</p>
+        <div class="libero-viewer" data-experiment="libero_combination" data-default-split="libero_spatial_selected_combinations_view">
+          <div class="trial-btns"></div>
+          <p class="split-label split-description"></p>
+          <div class="task-row">
+            <label>Task</label>
+            <select class="task-select"></select>
+          </div>
+          <div class="attention-row">
+            <h4>BPP Attention Map</h4>
+            <video controls loop muted autoplay playsinline></video>
+          </div>
         </div>
       </div>
+
+      <!-- Chain -->
+      <div class="libero-subsection">
+        <h3>LIBERO-Gen Chain</h3>
+        <p>In this benchmark we have one environment and explore the set of possible two-step interactions. First step actions include opening top/middle drawer, pushing the plate, turning on the stove, and pick-place actions. Second step actions include pick-place actions. We evaluate a model's instruction-following ability to complete sequential execution of two individually seen manipulation primitives never seen jointly during training.</p>
+        <div class="libero-viewer" data-experiment="libero_chain" data-default-split="libero_goal_chain_selected_view">
+          <div class="trial-btns"></div>
+          <p class="split-label split-description"></p>
+          <div class="task-row">
+            <label>Task</label>
+            <select class="task-select"></select>
+          </div>
+          <div class="attention-row">
+            <h4>BPP Attention Map</h4>
+            <video controls loop muted autoplay playsinline></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chain (No Second Step) -->
+      <div class="libero-subsection">
+        <h3>LIBERO-Gen Chain (No Second Step)</h3>
+        <p>We perform an ablation on the training data composition by removing the second-step tasks from the training dataset. This means that when we evaluate on unseen chained tasks, the second step in that chain has not been seen during training. For example, if the unseen chained task is "push the plate to the front of the stove and then put the bowl on the plate," then the policy will have never seen how to place the bowl on the plate after the plate has already moved to the location after the push. This increases the difficulty of completing the unseen tasks as it requires the model to 1) understand new two-step instructions and 2) complete a known manipulation primitive in an unseen environment state.</p>
+        <div class="libero-viewer" data-experiment="libero_chain_no_second_step" data-default-split="libero_goal_chain_selected_view">
+          <div class="trial-btns"></div>
+          <p class="split-label split-description"></p>
+          <div class="task-row">
+            <label>Task</label>
+            <select class="task-select"></select>
+          </div>
+          <div class="attention-row">
+            <h4>BPP Attention Map</h4>
+            <video controls loop muted autoplay playsinline></video>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
 
   <script>
-const SPLIT_DESCRIPTIONS = {
-      "libero_spatial_selected_combinations_inverse_view": "Training pick-place combinations — individual grasp and placement locations seen during training, but not the held-out joint combinations.",
-      "libero_spatial_selected_combinations_view":         "Unseen pick-place combinations — grasp and placement locations seen individually during training but <strong><em>never jointly</em></strong>, held out for test-time evaluation.",
+    // Splits excluded from training for a specific experiment (shown crossed-out)
+    const SPLIT_EXCLUDED = {
+      "libero_chain_no_second_step": new Set(["libero_goal_chain_secondstep_view"]),
+    };
+
+    const SPLIT_TYPES = {
+      "libero_spatial_selected_combinations_inverse_view": "train",
+      "libero_spatial_selected_combinations_view":         "unseen",
+      "libero_goal_chain_firststep_view":                  "train",
+      "libero_goal_chain_secondstep_view":                 "train",
+      "libero_goal_chain_selected_inverse_view":           "train",
+      "libero_goal_chain_selected_view":                   "unseen",
+    };
+
+    const SPLIT_DESCRIPTIONS = {
+      "libero_spatial_selected_combinations_inverse_view": "Training pick-place combinations",
+      "libero_spatial_selected_combinations_view":         "Unseen pick-place combinations — pick and place locations seen individually during training but <strong><em>never jointly</em></strong>.",
       "libero_goal_chain_firststep_view":                  "Training first-step tasks — single manipulation primitives including open drawer, push plate, turn on stove, and pick-place.",
       "libero_goal_chain_secondstep_view":                 "Training second-step tasks — pick-place actions where the preceding first step has already been completed.",
       "libero_goal_chain_selected_inverse_view":           "Training chained tasks — two-step sequences seen during training used to build up chaining capability.",
@@ -602,14 +663,48 @@ const SPLIT_DESCRIPTIONS = {
       fetch(`media/results/${experiment}/manifest.json`)
         .then(r => r.json())
         .then(({ splits }) => {
-          splits.forEach((split, i) => {
+          const excluded = SPLIT_EXCLUDED[experiment] || new Set();
+
+          // For chain_no_second_step, insert the crossed-out Second Step button at the right position
+          const allSplits = [...splits];
+          if (excluded.has('libero_goal_chain_secondstep_view') &&
+              !allSplits.find(s => s.key === 'libero_goal_chain_secondstep_view')) {
+            allSplits.splice(1, 0, {
+              key: 'libero_goal_chain_secondstep_view',
+              label: 'Second Step',
+              tasks: [],
+              excluded: true,
+            });
+          }
+
+          allSplits.forEach((split, i) => {
             const btn = document.createElement('button');
-            btn.className            = 'trial-btn' + (i === 0 ? ' active' : '');
-            btn.dataset.splitKey     = split.key;
-            btn.textContent          = split.label;
-            btn.addEventListener('click', () => activateSplit(split, splits));
+            const splitType = SPLIT_TYPES[split.key] || 'train';
+            if (split.excluded) {
+              btn.className        = 'trial-btn split-excluded';
+              btn.textContent      = split.label;
+              btn.disabled         = true;
+              btn.title            = 'Not included in training for this experiment';
+            } else {
+              btn.className        = `trial-btn split-${splitType}` + (i === 0 ? ' active' : '');
+              btn.dataset.splitKey = split.key;
+              btn.textContent      = `${split.label} (${split.tasks.length} task${split.tasks.length === 1 ? '' : 's'})`;
+              btn.addEventListener('click', () => {
+                if (btn.classList.contains('active')) return;
+                activateSplit(split, splits);
+              });
+            }
             splitBtns.appendChild(btn);
           });
+
+          // Legend
+          const splitLegend = document.createElement('div');
+          splitLegend.className = 'trial-key';
+          splitLegend.innerHTML =
+            '<span><span class="trial-key-swatch split-train-swatch"></span>Train</span>' +
+            '<span><span class="trial-key-swatch split-unseen-swatch"></span>Unseen</span>' +
+            (excluded.size ? '<span><span class="trial-key-swatch split-excluded-swatch"></span>Not trained</span>' : '');
+          splitBtns.insertAdjacentElement('afterend', splitLegend);
 
           taskSelect.addEventListener('change', () => {
             const activeKey = splitBtns.querySelector('.trial-btn.active')?.dataset.splitKey;
