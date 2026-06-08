@@ -1,0 +1,5 @@
+[
+  {"label": "Fold Left Arm",  "file": "left_arm",  "prompt": "left_arm"},
+  {"label": "Fold Right Arm", "file": "right_arm", "prompt": "right_arm"},
+  {"label": "Fold Bottom Up", "file": "fold_up",   "prompt": "fold_up"}
+]

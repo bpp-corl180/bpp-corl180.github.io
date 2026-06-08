@@ -396,6 +396,10 @@
       margin-top: 0.3rem;
     }
 
+    .laundry-viewer > video {
+      aspect-ratio: 2 / 1;
+    }
+
     /* ── footer ───────────────────────────────────────────────── */
     footer {
       padding: 2.5rem 1.5rem;
@@ -419,7 +423,23 @@
   <section>
     <div class="container">
       <h2>Laundry Folding</h2>
-      <div class="figure-placeholder">[ Figure placeholder ]</div>
+      <p>We evaluate on a real-world laundry folding task where the robot must fold the sweater in a specified way given a single human demonstration as a behavior prompt. The robot is trained on three distinct folding tasks and must determine which of the training behaviors to follow based on the prompt. All three tasks were seen during training.</p>
+
+      <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/bpp" data-default-autoplay="true" data-prompt-pause="true" data-hide-controls="true">
+        <div class="trial-btns"></div>
+        <div class="video-header-row">
+          <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
+          <span class="speed-tag">2× speed</span>
+          <span class="trial-caption"></span>
+        </div>
+        <video controls loop muted autoplay playsinline></video>
+        <div class="prompt-row" style="display:none">
+          <div class="video-header-row">
+            <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+          </div>
+          <video class="prompt-video" controls loop muted autoplay playsinline></video>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -435,7 +455,7 @@
         <h3>DrawAnything Real</h3>
         <p>At test time, BPP is provided with a single human drawing demonstration collected using iPhUMI. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
 
-        <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp">
+        <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true">
           <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
           <div class="trial-btns"></div>
           <div class="video-header-row">
@@ -507,7 +527,7 @@
             <select class="task-select"></select>
           </div>
           <div class="attention-row">
-            <h4>BPP Attention Map</h4>
+            <h4>BPP Attention Map <span class="speed-tag">(not all rollouts are successful)</span></h4>
             <video controls loop muted autoplay playsinline></video>
           </div>
         </div>
@@ -525,7 +545,7 @@
             <select class="task-select"></select>
           </div>
           <div class="attention-row">
-            <h4>BPP Attention Map</h4>
+            <h4>BPP Attention Map <span class="speed-tag">(not all rollouts are successful)</span></h4>
             <video controls loop muted autoplay playsinline></video>
           </div>
         </div>
@@ -543,7 +563,7 @@
             <select class="task-select"></select>
           </div>
           <div class="attention-row">
-            <h4>BPP Attention Map</h4>
+            <h4>BPP Attention Map <span class="speed-tag">(not all rollouts are successful)</span></h4>
             <video controls loop muted autoplay playsinline></video>
           </div>
         </div>
@@ -799,12 +819,11 @@
     const simSection = document.querySelector('[data-task="drawanything_sim"]')?.closest('section');
     document.querySelectorAll('video').forEach(v => {
       v.removeAttribute('controls');
-      if (!simSection?.contains(v)) {
-        // All sections except DrawAnything-Sim: show controls on hover
+      const noControls = simSection?.contains(v) || v.closest('[data-hide-controls]');
+      if (!noControls) {
         v.addEventListener('mouseenter', () => v.controls = true);
         v.addEventListener('mouseleave', () => v.controls = false);
       }
-      // DrawAnything-Sim: never show controls
     });
 
     // ── Single video viewers (e.g. DrawAnything-Real) ────────────
@@ -869,10 +888,30 @@
             const bs = [...btns.querySelectorAll('.trial-btn')];
             bs[(bs.findIndex(b => b.classList.contains('active')) + 1) % bs.length].click();
           }
+          function promptPauseOnEnd() {
+            promptVid.currentTime = Math.max(0, promptVid.duration - 0.001);
+          }
           autoCheckSingle.addEventListener('change', () => {
-            if (autoCheckSingle.checked) { video.loop = false; video.addEventListener('ended', advanceSingle); }
-            else { video.loop = true; video.removeEventListener('ended', advanceSingle); }
+            if (autoCheckSingle.checked) {
+              video.loop = false;
+              video.addEventListener('ended', advanceSingle);
+              if (promptVid && viewer.dataset.promptPause === 'true') {
+                promptVid.loop = false;
+                promptVid.addEventListener('ended', promptPauseOnEnd);
+              }
+            } else {
+              video.loop = true;
+              video.removeEventListener('ended', advanceSingle);
+              if (promptVid) {
+                promptVid.loop = true;
+                promptVid.removeEventListener('ended', promptPauseOnEnd);
+              }
+            }
           });
+          if (viewer.dataset.defaultAutoplay === 'true') {
+            autoCheckSingle.checked = true;
+            autoCheckSingle.dispatchEvent(new Event('change'));
+          }
         })
         .catch(() => console.warn(`No trials.json found at ${base}`));
     });
