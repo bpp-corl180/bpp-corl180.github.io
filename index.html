@@ -157,7 +157,7 @@
     }
 
     .trial-caption {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       margin-bottom: 0.75rem;
     }
@@ -351,6 +351,7 @@
 
     .section-heading-row {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
       margin-top: 1.0rem;
@@ -358,9 +359,8 @@
       line-height: 1;
     }
     .section-heading-row h3 { margin-bottom: 0; }
-    .section-heading-row .trial-key { margin: 0 0 0 auto; }
-    .section-heading-row .autoplay-label { margin: 0 0 0 auto; }
-    .section-heading-row .trial-key ~ .autoplay-label { margin-left: 0; }
+    .section-heading-row .trial-key { margin: 0; flex-shrink: 0; }
+    .section-heading-row .autoplay-label { margin: 0; flex-shrink: 0; }
 
     /* ── libero viewer ───────────────────────────────────────── */
     .task-row {
