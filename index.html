@@ -122,8 +122,9 @@
 .video-header-row {
       display: flex;
       align-items: baseline;
+      justify-content: center;
       gap: 0.6rem;
-      margin: 0.5rem 0 0.5rem;
+      margin: 0.5rem 0 0.15rem;
     }
 
     .video-header-row .prompt-heading,
@@ -158,9 +159,11 @@
     .trial-caption {
       font-size: 0.8rem;
       color: var(--text-muted);
+      margin-bottom: 0.75rem;
     }
 
     .trial-caption:empty { display: none; }
+    .trial-btns + .trial-caption { margin-top: -0.5rem; }
 
     .split-label {
       font-size: 0.9rem;
@@ -175,7 +178,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0 0.5rem;
+      margin: 1rem 0 1.25rem;
       min-height: 2rem;
     }
 
@@ -229,7 +232,7 @@
       gap: 1rem;
       margin-top: 0.25rem;
       margin-bottom: 1.25rem;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       align-items: center;
     }
@@ -345,6 +348,19 @@
       font-weight: 400;
       margin-bottom: 0.75rem;
     }
+
+    .section-heading-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.0rem;
+      margin-bottom: 0.50rem;
+      line-height: 1;
+    }
+    .section-heading-row h3 { margin-bottom: 0; }
+    .section-heading-row .trial-key { margin: 0 0 0 auto; }
+    .section-heading-row .autoplay-label { margin: 0 0 0 auto; }
+    .section-heading-row .trial-key ~ .autoplay-label { margin-left: 0; }
 
     /* ── libero viewer ───────────────────────────────────────── */
     .task-row {
@@ -470,9 +486,10 @@
   <section>
     <div class="container">
       <h2>Laundry Folding</h2>
-      <p>The robot must perform the desired folding task specified by a human demonstration (behavior prompt) provided at test time. The robot is trained on three distinct folding tasks and BPP determines which of the training behaviors to follow based on the prompt. All three tasks were seen during training. The purpose is to validate that we can command a robot via demonstration to complete complex manipulation tasks.</p>
+      <p>A human commands the robot at test time through a single sweater folding demonstration (i.e., behavior prompt) collected with bimanual iPhUMI. The robot is trained on three distinct folding tasks and BPP determines which of the training behaviors to follow based on the prompt. All three tasks were seen during training. The purpose of this experiment is to validate that we can command a robot via demonstration to complete complex manipulation tasks.</p>
 
       <div class="single-viewer laundry-viewer laundry-main-viewer" data-base="media/results/laundry_folding/bpp" data-default-autoplay="true" data-prompt-pause="true" data-hide-controls="true">
+        <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Training tasks:</p>
         <div class="trial-btns"></div>
         <div class="laundry-videos-row">
           <div class="laundry-rollout-col">
@@ -495,14 +512,15 @@
       <!-- Failure cases -->
       <div class="libero-subsection">
         <h3>Failure Cases</h3>
-        <p>While BPP mostly executes the correctly prompted task, we sometimes observe that it executes a different task than what was specified in the behavior prompt. This happens because the temporal and spatial information in the behvaior prompt does not provide any additional task-relevant details in this experiment: we have very low training task diversity (just three tasks) and all the task-relevant execution information can be memorized in the base model rather than needing to be explicitly referenced from the prompt. This complexity makes the behavior prompt a more indirect identifier of the desired task for this experiment, which can weaken the strength of the task conditioning. The videos below highlight cases where the model completes the wrong task or hesitates about what task to complete.</p>
+        <p>While BPP mostly executes the correctly prompted task, we sometimes observe that it executes a different task than specified. For this experiment, the temporal and spatial information in the behavior prompt does not provide any additional task-relevant details: we have very low training task diversity (just three tasks) and all the task-relevant execution information can be memorized in the base model rather than needing to be explicitly referenced from the prompt. This prompt complexity makes the behavior prompt a more indirect identifier of the desired folding task compared to a language command, which can weaken the strength of the task conditioning. The videos below highlight cases where the model completes the wrong task or hesitates about what task to complete.</p>
         <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/failures" data-default-autoplay="true" data-hide-controls="true">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Select a failure case:</p>
           <div class="trial-btns"></div>
+          <p class="trial-caption"></p>
           <div class="video-header-row">
             <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
             <span class="speed-tag">2× speed</span>
           </div>
-          <p class="trial-caption"></p>
           <video controls loop muted autoplay playsinline></video>
         </div>
         <p style="margin-top: 1rem;">We anticipate that behavior prompting would have substantial advantages in a laundry folding setting with many folding tasks and many garmet types where we adapt to a new folding style or garmet at test time. In this case, the spatial and temporal information in the behavior prompt provides useful temporal cues about the folding steps and useful visual cues about interaction points on the new garmet. It would be more challenging to describe these spatial interaction points and folding steps with language conditioning.
@@ -525,12 +543,12 @@
         <div class="single-viewer drawreal-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true">
           <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
           <div class="trial-btns"></div>
+          <p class="trial-caption"></p>
           <div class="drawreal-videos-row">
             <div class="drawreal-rollout-col">
               <div class="video-header-row">
                 <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
                 <span class="speed-tag">3× speed</span>
-                <span class="trial-caption"></span>
               </div>
               <video controls loop muted autoplay playsinline></video>
             </div>
@@ -591,6 +609,7 @@
         <h3>LIBERO-Gen Combination</h3>
         <p>In this benchmark we have one environment containing two identical bowls that are placed at varying initial locations in the scene. The policy is instructed to pick one of the two bowls and then place that bowl in an instructed target location. We train on many pick-place location combinations and evaluate on unseen pick-place combinations at test-time.</p>
         <div class="libero-viewer" data-experiment="libero_combination" data-default-split="libero_spatial_selected_combinations_view">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Dataset split:</p>
           <div class="trial-btns"></div>
           <p class="split-label split-description"></p>
           <div class="task-row">
@@ -609,6 +628,7 @@
         <h3>LIBERO-Gen Chain</h3>
         <p>In this benchmark we have one environment and explore the set of possible two-step interactions. First step actions include opening top/middle drawer, pushing the plate, turning on the stove, and pick-place actions. Second step actions include pick-place actions. We evaluate a model's instruction-following ability to complete sequential execution of two individually seen manipulation primitives never seen jointly during training.</p>
         <div class="libero-viewer" data-experiment="libero_chain" data-default-split="libero_goal_chain_selected_view">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Dataset split:</p>
           <div class="trial-btns"></div>
           <p class="split-label split-description"></p>
           <div class="task-row">
@@ -627,6 +647,7 @@
         <h3>LIBERO-Gen Chain (No Second Step)</h3>
         <p>We perform an ablation on the training data composition by removing the second-step tasks from the training dataset. This means that when we evaluate on unseen chained tasks, the second step in that chain has not been seen during training. For example, if the unseen chained task is "push the plate to the front of the stove and then put the bowl on the plate," then the policy will have never seen how to place the bowl on the plate after the plate has already moved to the location after the push. This increases the difficulty of completing the unseen tasks as it requires the model to 1) understand new two-step instructions and 2) complete a known manipulation primitive in an unseen environment state.</p>
         <div class="libero-viewer" data-experiment="libero_chain_no_second_step" data-default-split="libero_goal_chain_selected_view">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Dataset split:</p>
           <div class="trial-btns"></div>
           <p class="split-label split-description"></p>
           <div class="task-row">
@@ -684,6 +705,36 @@
       if (attnVid) setVideoSrc(attnVid, `media/results/${task}/${split}/bpp_attention/${encoded}.mp4`);
     }
 
+    function createAutoplayLabel() {
+      const label = document.createElement('label');
+      label.className = 'autoplay-label';
+      label.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
+      return label;
+    }
+
+    function createOutcomeLegend() {
+      const key = document.createElement('div');
+      key.className = 'trial-key';
+      key.innerHTML =
+        '<span><span class="trial-key-swatch success"></span>BPP Success</span>' +
+        '<span><span class="trial-key-swatch failure"></span>BPP Failure</span>';
+      return key;
+    }
+
+    function getOrCreateHeadingRow(ref) {
+      const prev = ref.previousElementSibling;
+      if (prev?.classList.contains('section-heading-row')) return prev;
+      const anchor = prev ?? ref.closest('.libero-subsection')?.querySelector('h3');
+      if (!anchor) return null;
+      const row = document.createElement('div');
+      row.className = 'section-heading-row';
+      anchor.parentNode.insertBefore(row, anchor);
+      row.appendChild(anchor);
+      anchor.style.margin = '0';
+      anchor.style.lineHeight = '1';
+      return row;
+    }
+
     function initTrialButtons(btnRow, trials) {
       const task  = btnRow.dataset.task;
       const split = btnRow.dataset.split;
@@ -694,12 +745,10 @@
 
       const hasOutcomes = trials.some(t => t.success !== undefined);
       if (hasOutcomes) {
-        const key = document.createElement('div');
-        key.className = 'trial-key';
-        key.innerHTML =
-          '<span><span class="trial-key-swatch success"></span>BPP Success</span>' +
-          '<span><span class="trial-key-swatch failure"></span>BPP Failure</span>';
-        btnRow.insertAdjacentElement('afterend', key);
+        const key = createOutcomeLegend();
+        const row = getOrCreateHeadingRow(btnRow);
+        if (row) row.appendChild(key);
+        else btnRow.insertAdjacentElement('afterend', key);
       }
 
       trials.forEach(trial => {
@@ -788,14 +837,22 @@
             splitBtns.appendChild(btn);
           });
 
-          // Legend
+          const liberoRow = getOrCreateHeadingRow(splitBtns);
+
+          // Legend first
           const splitLegend = document.createElement('div');
           splitLegend.className = 'trial-key';
           splitLegend.innerHTML =
             '<span><span class="trial-key-swatch split-train-swatch"></span>Train</span>' +
             '<span><span class="trial-key-swatch split-unseen-swatch"></span>Unseen</span>' +
             (excluded.size ? '<span><span class="trial-key-swatch split-excluded-swatch"></span>Not trained</span>' : '');
-          splitBtns.insertAdjacentElement('afterend', splitLegend);
+          if (liberoRow) liberoRow.appendChild(splitLegend);
+          else splitBtns.insertAdjacentElement('afterend', splitLegend);
+
+          // Autoplay after legend
+          const autoLabel = createAutoplayLabel();
+          if (liberoRow) liberoRow.appendChild(autoLabel);
+          else taskSelect.closest('.task-row').insertAdjacentElement('afterend', autoLabel);
 
           taskSelect.addEventListener('change', () => {
             const activeKey = splitBtns.querySelector('.trial-btn.active')?.dataset.splitKey;
@@ -805,12 +862,6 @@
           const defaultKey = viewer.dataset.defaultSplit;
           const initial = (defaultKey && splits.find(s => s.key === defaultKey)) ?? splits[0];
           if (initial) activateSplit(initial, splits);
-
-          // Autoplay through tasks
-          const autoLabel = document.createElement('label');
-          autoLabel.className = 'autoplay-label';
-          autoLabel.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
-          taskSelect.closest('.task-row').insertAdjacentElement('afterend', autoLabel);
           const autoCheck = autoLabel.querySelector('input');
 
           function advanceTask() {
@@ -864,10 +915,10 @@
 
       videos.forEach(v => v.addEventListener('ended', onEnded));
 
-      const label = document.createElement('label');
-      label.className = 'autoplay-label';
-      label.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
-      btnRow.insertAdjacentElement('afterend', label);
+      const label = createAutoplayLabel();
+      const syncRow = getOrCreateHeadingRow(btnRow);
+      if (syncRow) syncRow.appendChild(label);
+      else btnRow.insertAdjacentElement('afterend', label);
 
       const checkbox = label.querySelector('input');
       checkbox.addEventListener('change', () => { autoplayOn = checkbox.checked; });
@@ -921,15 +972,20 @@
         .then(trials => {
           const defaultEntry = trials[0];
 
+          const headingRow = getOrCreateHeadingRow(btns);
+
+          // Legend first
           const hasOutcomes = trials.some(t => t.success !== undefined);
           if (hasOutcomes) {
-            const key = document.createElement('div');
-            key.className = 'trial-key';
-            key.innerHTML =
-              '<span><span class="trial-key-swatch success"></span>BPP Success</span>' +
-              '<span><span class="trial-key-swatch failure"></span>BPP Failure</span>';
-            btns.insertAdjacentElement('afterend', key);
+            const key = createOutcomeLegend();
+            if (headingRow) headingRow.appendChild(key);
+            else btns.insertAdjacentElement('afterend', key);
           }
+
+          // Autoplay after legend
+          const autoLabelSingle = createAutoplayLabel();
+          if (headingRow) headingRow.appendChild(autoLabelSingle);
+          else btns.insertAdjacentElement('afterend', autoLabelSingle);
 
           trials.forEach(trial => {
             const btn = document.createElement('button');
@@ -949,11 +1005,6 @@
           video.src = `${base}/${encodeURIComponent(defaultEntry.file)}.mp4`;
           if (captionEl) captionEl.textContent = defaultEntry.caption ?? '';
           updatePrompt(defaultEntry);
-          // Single video: loop normally, advance on autoplay
-          const autoLabelSingle = document.createElement('label');
-          autoLabelSingle.className = 'autoplay-label';
-          autoLabelSingle.innerHTML = '<input type="checkbox"> <span>Enable Autoplay</span>';
-          btns.insertAdjacentElement('afterend', autoLabelSingle);
           const autoCheckSingle = autoLabelSingle.querySelector('input');
           function advanceSingle() {
             const bs = [...btns.querySelectorAll('.trial-btn')];
