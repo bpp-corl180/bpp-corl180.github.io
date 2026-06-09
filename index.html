@@ -115,7 +115,8 @@
 
     p {
       color: var(--text-muted);
-      max-width: 680px;
+      max-width: none;
+      text-align: justify;
     }
 
 .video-header-row {
@@ -396,8 +397,54 @@
       margin-top: 0.3rem;
     }
 
-    .laundry-viewer > video {
+    .laundry-viewer video:not(.prompt-video) {
       aspect-ratio: 2 / 1;
+    }
+
+    .laundry-videos-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawreal-videos-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 1100px) {
+      .drawreal-viewer .drawreal-videos-row {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100vw;
+        max-width: calc(var(--max-w) * 1.5);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 1.5rem;
+      }
+
+      /* both 16:9 → equal widths give equal heights */
+      .drawreal-viewer .drawreal-rollout-col,
+      .drawreal-viewer .prompt-row { flex: 1; min-width: 0; }
+    }
+
+    @media (min-width: 1100px) {
+      .laundry-main-viewer .laundry-videos-row {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100vw;
+        max-width: calc(var(--max-w) * 1.5);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 1.5rem;
+      }
+
+      /* flex 9:8 gives equal height: rollout (2:1) vs prompt (16:9) */
+      .laundry-main-viewer .laundry-rollout-col { flex: 9; min-width: 0; }
+      .laundry-main-viewer .prompt-row          { flex: 8; min-width: 0; }
     }
 
     /* ── footer ───────────────────────────────────────────────── */
@@ -423,22 +470,42 @@
   <section>
     <div class="container">
       <h2>Laundry Folding</h2>
-      <p>We evaluate on a real-world laundry folding task where the robot must fold the sweater in a specified way given a single human demonstration as a behavior prompt. The robot is trained on three distinct folding tasks and must determine which of the training behaviors to follow based on the prompt. All three tasks were seen during training.</p>
+      <p>The robot must perform the desired folding task specified by a human demonstration (behavior prompt) provided at test time. The robot is trained on three distinct folding tasks and BPP determines which of the training behaviors to follow based on the prompt. All three tasks were seen during training. The purpose is to validate that we can command a robot via demonstration to complete complex manipulation tasks.</p>
 
-      <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/bpp" data-default-autoplay="true" data-prompt-pause="true" data-hide-controls="true">
+      <div class="single-viewer laundry-viewer laundry-main-viewer" data-base="media/results/laundry_folding/bpp" data-default-autoplay="true" data-prompt-pause="true" data-hide-controls="true">
         <div class="trial-btns"></div>
-        <div class="video-header-row">
-          <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
-          <span class="speed-tag">2× speed</span>
-          <span class="trial-caption"></span>
-        </div>
-        <video controls loop muted autoplay playsinline></video>
-        <div class="prompt-row" style="display:none">
-          <div class="video-header-row">
-            <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+        <div class="laundry-videos-row">
+          <div class="laundry-rollout-col">
+            <div class="video-header-row">
+              <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
+              <span class="speed-tag">2× speed</span>
+              <span class="trial-caption"></span>
+            </div>
+            <video controls loop muted autoplay playsinline></video>
           </div>
-          <video class="prompt-video" controls loop muted autoplay playsinline></video>
+          <div class="prompt-row" style="display:none">
+            <div class="video-header-row">
+              <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+            </div>
+            <video class="prompt-video" controls loop muted autoplay playsinline></video>
+          </div>
         </div>
+      </div>
+
+      <!-- Failure cases -->
+      <div class="libero-subsection">
+        <h3>Failure Cases</h3>
+        <p>While BPP mostly executes the correctly prompted task, we sometimes observe that it executes a different task than what was specified in the behavior prompt. This happens because the temporal and spatial information in the behvaior prompt does not provide any additional task-relevant details in this experiment: we have very low training task diversity (just three tasks) and all the task-relevant execution information can be memorized in the base model rather than needing to be explicitly referenced from the prompt. This complexity makes the behavior prompt a more indirect identifier of the desired task for this experiment, which can weaken the strength of the task conditioning. The videos below highlight cases where the model completes the wrong task or hesitates about what task to complete.</p>
+        <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/failures" data-default-autoplay="true" data-hide-controls="true">
+          <div class="trial-btns"></div>
+          <div class="video-header-row">
+            <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
+            <span class="speed-tag">2× speed</span>
+          </div>
+          <p class="trial-caption"></p>
+          <video controls loop muted autoplay playsinline></video>
+        </div>
+        <p style="margin-top: 1rem;">We anticipate that behavior prompting would have substantial advantages in a laundry folding setting with many folding tasks and many garmet types where we adapt to a new folding style or garmet at test time. In this case, the spatial and temporal information in the behavior prompt provides useful temporal cues about the folding steps and useful visual cues about interaction points on the new garmet. It would be more challenging to describe these spatial interaction points and folding steps with language conditioning.
       </div>
     </div>
   </section>
@@ -455,21 +522,25 @@
         <h3>DrawAnything Real</h3>
         <p>At test time, BPP is provided with a single human drawing demonstration collected using iPhUMI. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
 
-        <div class="single-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true">
+        <div class="single-viewer drawreal-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true">
           <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
           <div class="trial-btns"></div>
-          <div class="video-header-row">
-            <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
-            <span class="speed-tag">3× speed</span>
-            <span class="trial-caption"></span>
-          </div>
-          <video controls loop muted autoplay playsinline></video>
-          <div class="prompt-row" style="display:none">
-            <div class="video-header-row">
-              <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
-              <span class="speed-tag">3× speed</span>
+          <div class="drawreal-videos-row">
+            <div class="drawreal-rollout-col">
+              <div class="video-header-row">
+                <h4 class="prompt-heading" style="margin:0">BPP Rollout</h4>
+                <span class="speed-tag">3× speed</span>
+                <span class="trial-caption"></span>
+              </div>
+              <video controls loop muted autoplay playsinline></video>
             </div>
-            <video class="prompt-video" controls loop muted autoplay playsinline></video>
+            <div class="prompt-row" style="display:none">
+              <div class="video-header-row">
+                <h4 class="prompt-heading" style="margin:0">Behavior Prompt</h4>
+                <span class="speed-tag">3× speed</span>
+              </div>
+              <video class="prompt-video" controls loop muted autoplay playsinline></video>
+            </div>
           </div>
         </div>
       </div>
