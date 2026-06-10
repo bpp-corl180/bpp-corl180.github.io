@@ -402,6 +402,23 @@
 
     .split-description { min-height: 1.5rem; }
 
+    /* ── viewer cards ─────────────────────────────────────────── */
+    .single-viewer,
+    .libero-viewer,
+    .sim-viewer {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      margin-top: 1.25rem;
+    }
+
+    .single-viewer .section-heading-row:first-child,
+    .libero-viewer .section-heading-row:first-child,
+    .sim-viewer .section-heading-row:first-child {
+      margin-top: 0;
+    }
+
     /* ── single video viewer (drawanything-real) ──────────────── */
     .single-viewer video {
       width: 100%;
@@ -428,34 +445,29 @@
     }
 
     @media (min-width: 1100px) {
-      .drawreal-viewer .drawreal-videos-row {
-        flex-direction: row-reverse;
-        align-items: flex-start;
-        gap: 1.5rem;
-        width: 100vw;
+      .drawreal-viewer,
+      .laundry-main-viewer {
+        width: calc(100vw - 3rem);
         max-width: calc(var(--max-w) * 1.5);
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        padding: 0 1.5rem;
+      }
+
+      .drawreal-viewer .drawreal-videos-row {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        gap: 1.5rem;
       }
 
       /* both 16:9 → equal widths give equal heights */
       .drawreal-viewer .drawreal-rollout-col,
       .drawreal-viewer .prompt-row { flex: 1; min-width: 0; }
-    }
 
-    @media (min-width: 1100px) {
       .laundry-main-viewer .laundry-videos-row {
         flex-direction: row-reverse;
         align-items: flex-start;
         gap: 1.5rem;
-        width: 100vw;
-        max-width: calc(var(--max-w) * 1.5);
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 1.5rem;
       }
 
       /* flex 9:8 gives equal height: rollout (2:1) vs prompt (16:9) */
@@ -568,31 +580,33 @@
         <h3>DrawAnything Sim</h3>
         <p>The red drawing is the ground truth displayed for reference; it is not visible to the policy. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The behavior prompt is a single human demonstration collected using a mouse. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image of the demonstration.</p>
 
-        <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
-        <div class="trial-btns"
-             data-task="drawanything_sim"
-             data-split="unseen_rollout"
-             data-default-trial="f7">
-        </div>
+        <div class="sim-viewer">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
+          <div class="trial-btns"
+               data-task="drawanything_sim"
+               data-split="unseen_rollout"
+               data-default-trial="f7">
+          </div>
 
-        <div class="model-grid">
-          <div class="model-col">
-            <h4>Goal Image</h4>
-            <video id="vid-drawanything_sim-goal_image" controls loop muted autoplay playsinline></video>
+          <div class="model-grid">
+            <div class="model-col">
+              <h4>Goal Image</h4>
+              <video id="vid-drawanything_sim-goal_image" controls loop muted autoplay playsinline></video>
+            </div>
+            <div class="model-col">
+              <h4>ICRT</h4>
+              <video id="vid-drawanything_sim-icrt" controls loop muted autoplay playsinline></video>
+            </div>
+            <div class="model-col">
+              <h4>BPP (Ours)</h4>
+              <video id="vid-drawanything_sim-bpp" controls loop muted autoplay playsinline></video>
+            </div>
           </div>
-          <div class="model-col">
-            <h4>ICRT</h4>
-            <video id="vid-drawanything_sim-icrt" controls loop muted autoplay playsinline></video>
-          </div>
-          <div class="model-col">
-            <h4>BPP (Ours)</h4>
-            <video id="vid-drawanything_sim-bpp" controls loop muted autoplay playsinline></video>
-          </div>
-        </div>
 
-        <div class="attention-row">
-          <h4>BPP Attention Map</h4>
-          <video id="vid-drawanything_sim-bpp_attention" controls loop muted autoplay playsinline></video>
+          <div class="attention-row">
+            <h4>BPP Attention Map</h4>
+            <video id="vid-drawanything_sim-bpp_attention" controls loop muted autoplay playsinline></video>
+          </div>
         </div>
       </div>
     </div>
