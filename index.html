@@ -272,7 +272,16 @@
     .model-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      column-gap: 1rem;
+      row-gap: 0;
+      align-items: start;
+    }
+
+    .model-col {
+      display: grid;
+      grid-row: span 2;
+      grid-template-rows: subgrid;
+      row-gap: 0.5rem;
     }
 
     .model-col h4 {
@@ -281,7 +290,8 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.5rem;
+      text-align: center;
+      align-self: start;
     }
 
 .model-col video {
@@ -894,11 +904,6 @@
             }
           });
 
-          video.addEventListener('loadedmetadata', function lockHeight() {
-            requestAnimationFrame(() => {
-              if (!video.style.minHeight) video.style.minHeight = video.offsetHeight + 'px';
-            });
-          });
         })
         .catch(() => console.warn(`No manifest.json found for ${experiment}`));
     });
