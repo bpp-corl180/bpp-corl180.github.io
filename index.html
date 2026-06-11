@@ -181,6 +181,7 @@
       margin: 1rem 0 1.25rem;
       min-height: 2rem;
     }
+    .laundry-main-viewer .trial-btns { margin-bottom: 0.25rem; }
 
     .trial-btn {
       font-family: 'Inter', sans-serif;
@@ -419,7 +420,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.25rem 1.5rem;
-      background: var(--surface);
+      background: #F0EDE8;
       margin-top: 1.25rem;
     }
 
@@ -508,7 +509,7 @@
   <section>
     <div class="container">
       <h2>Laundry Folding</h2>
-      <p>A human commands the robot at test time through a single sweater folding demonstration (i.e., behavior prompt) collected with bimanual iPhUMI. The robot is trained on three distinct folding tasks and BPP determines which of the training behaviors to follow based on the prompt. All three tasks were seen during training. The purpose of this experiment is to validate that we can command a robot via demonstration to complete complex manipulation tasks.</p>
+      <p>A human commands the robot at test time through a single sweater folding demonstration (i.e., behavior prompt) collected with bimanual iPhUMI. The robot is trained on three distinct folding tasks, and BPP determines which of the training behaviors to follow based on the prompt. The purpose of this experiment is to validate that we can command a robot via demonstration to complete complex manipulation tasks.</p>
 
       <div class="single-viewer laundry-viewer laundry-main-viewer" data-base="media/results/laundry_folding/bpp" data-default-autoplay="true" data-prompt-pause="true" data-hide-controls="true">
         <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Training tasks:</p>
@@ -533,8 +534,9 @@
 
       <!-- Failure cases -->
       <div class="libero-subsection">
-        <h3>Failure Cases</h3>
-        <p>While BPP mostly executes the correctly prompted task, we sometimes observe that it executes a different task than specified. For this experiment, the temporal and spatial information in the behavior prompt does not provide any additional task-relevant details: we have very low training task diversity (just three tasks) and all the task-relevant execution information can be memorized in the base model rather than needing to be explicitly referenced from the prompt. This prompt complexity makes the behavior prompt a more indirect identifier of the desired folding task compared to a language command, which can weaken the strength of the task conditioning. The videos below highlight cases where the model completes the wrong task or hesitates about what task to complete.</p>
+        <h3>Behavior prompting challenges with low task diversity</h3>
+        <p>
+          Behavior prompts are most useful when the spatial and temporal information in the prompt provide additional task-relevent cues to the policy. But in this experiment we only have three training tasks, all of which can be directly memorized and distinguished in the base model. Consequently, this extra information makes the behavior prompt a more indirect identifier of the desired folding task compared to a language command. We observe that this indirectness weakens the strength of the behavior prompt conditioning in low task diversity scenarios. Below, we highlight cases below where BPP completes the wrong task or hesitates about what task to complete. We don't see these failure modes with language conditioning.</p>
         <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/failures" data-default-autoplay="true" data-hide-controls="true">
           <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Select a failure case:</p>
           <div class="trial-btns"></div>
@@ -545,7 +547,7 @@
           </div>
           <video controls loop muted autoplay playsinline></video>
         </div>
-        <p style="margin-top: 1rem;">We anticipate that behavior prompting would have substantial advantages in a laundry folding setting with many folding tasks and many garmet types where we adapt to a new folding style or garmet at test time. In this case, the spatial and temporal information in the behavior prompt provides useful temporal cues about the folding steps and useful visual cues about interaction points on the new garmet. It would be more challenging to describe these spatial interaction points and folding steps with language conditioning.
+        <p style="margin-top: 1rem;">We anticipate that behavior prompting would have substantial advantages over language conditioning if we trained on many folding strategies across many garmet types and then evaluated test-time adaptation to a new folding style or unseen garmet. In this case, a behavior prompt provides useful temporal cues about the folding steps and useful visual cues about interaction points on the new garmet. It's also more natural to describe these folding steps and spatial interaction points through a demonstration than with language.
       </div>
     </div>
   </section>
