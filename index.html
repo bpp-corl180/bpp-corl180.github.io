@@ -24,6 +24,7 @@
       --accent-pale: #EEF1FB;
       --max-w:       860px;
       --radius:      10px;
+      --btn-height:  2rem;
     }
 
     /* ── reset ────────────────────────────────────────────────── */
@@ -124,7 +125,7 @@
       align-items: baseline;
       justify-content: center;
       gap: 0.6rem;
-      margin: 0.5rem 0 0.15rem;
+      margin: 0.15rem 0 0.15rem;
     }
 
     .video-header-row .prompt-heading,
@@ -159,11 +160,11 @@
     .trial-caption {
       font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .trial-caption:empty { display: none; }
-    .trial-btns + .trial-caption { margin-top: -0.5rem; }
 
     .split-label {
       font-size: 0.9rem;
@@ -178,16 +179,20 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin: 1rem 0 1.25rem;
+      margin: 1rem 0 0.35rem;
       min-height: 2rem;
     }
-    .laundry-main-viewer .trial-btns { margin-bottom: 0.25rem; }
 
     .trial-btn {
+      display: inline-flex;
+      align-items: center;
+      height: var(--btn-height);
+      white-space: nowrap;
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       font-weight: 500;
-      padding: 0.3rem 0.85rem;
+      line-height: 1;
+      padding: 0 0.85rem;
       border-radius: 5px;
       border: 1px solid var(--border);
       background: var(--surface);
@@ -200,6 +205,7 @@
 
     .trial-btn.active {
       border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
       background: var(--accent-pale);
       color: var(--accent);
     }
@@ -347,13 +353,13 @@
     }
 
     /* ── libero subsections ──────────────────────────────────── */
-    .libero-subsection {
+    .subsection {
       margin-top: 3rem;
       padding-top: 2.5rem;
       border-top: 1px solid var(--border);
     }
 
-    .libero-subsection h3 {
+    .subsection h3 {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: 1.2rem;
       font-weight: 400;
@@ -533,12 +539,12 @@
       </div>
 
       <!-- Failure cases -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>Behavior prompting challenges with low task diversity</h3>
         <p>
           Behavior prompts are most useful when the spatial and temporal information in the prompt provide additional task-relevent cues to the policy. But in this experiment we only have three training tasks, all of which can be directly memorized and distinguished in the base model. Consequently, this extra information makes the behavior prompt a more indirect identifier of the desired folding task compared to a language command. We observe that this indirectness weakens the strength of the behavior prompt conditioning in low task diversity scenarios. Below, we highlight cases below where BPP completes the wrong task or hesitates about what task to complete. We don't see these failure modes with language conditioning.</p>
         <div class="single-viewer laundry-viewer" data-base="media/results/laundry_folding/failures" data-default-autoplay="true" data-hide-controls="true">
-          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Select a failure case:</p>
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Failure cases:</p>
           <div class="trial-btns"></div>
           <p class="trial-caption"></p>
           <div class="video-header-row">
@@ -557,15 +563,15 @@
   <section>
     <div class="container">
       <h2>DrawAnything</h2>
-      <p>We evaluate behavior prompting on a free-form drawing task where the robot must replicate a novel drawing given a single human demonstration as a behavior prompt. Drawing is well suited for studying behavior prompting as it requires the policy to continuously refernece the prompt to adapt its low-level actions. Results are shown on drawings <strong><em>not seen during training</em></strong>.</p>
+      <p>We evaluate behavior prompting on a free-form drawing task where the robot must replicate a novel drawing given a single human demonstration. Drawing is well suited for studying behavior prompting as it requires the policy to continuously reference the prompt to adapt its low-level actions. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly replay actions from the prompt. Results are shown on drawings <strong><em>not seen during training</em></strong>.</p>
 
       <!-- Real -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>DrawAnything Real</h3>
-        <p>At test time, BPP is provided with a single human drawing demonstration collected using iPhUMI. The rollout and prompt occur at different board poses, meaning the policy can't directly copy actions from the prompt.</p>
+        <p>At test time, BPP is provided with a single human drawing demo collected using iPhUMI. The robot then replicates the drawing at a different drawing region pose.</p>
 
-        <div class="single-viewer drawreal-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true">
-          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
+        <div class="single-viewer drawreal-viewer" data-base="media/results/drawanything_real/unseen_rollout/bpp" data-default-autoplay="true" data-prompt-pause="true">
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Tasks not seen during training:</p>
           <div class="trial-btns"></div>
           <p class="trial-caption"></p>
           <div class="drawreal-videos-row">
@@ -588,12 +594,12 @@
       </div>
 
       <!-- Sim -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>DrawAnything Sim</h3>
-        <p>The red drawing is the ground truth displayed for reference; it is not visible to the policy. The attention map visualization below shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The behavior prompt is a single human demonstration collected using a mouse. Note that the prompt and rollout occur at different board orientations, meaning that BPP can't replicate the drawing by directly copying actions from the prompt. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image of the demonstration.</p>
+        <p>The behavior prompt is a single human demonstration of a previously unseen drawing collected using a mouse. ICRT also has the behavior prompt in its model context, while the goal image policy only has access to the final image of the demonstration. The attention map visualization shows the rollout for BPP (top) and the behavior prompt with attention scores overlaid (bottom). The red drawing is the ground truth displayed for reference; it is not visible to the policy.</p>
 
         <div class="sim-viewer">
-          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Unseen tasks (not seen during training):</p>
+          <p style="font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); margin:1rem 0 -0.5rem; max-width:none;">Tasks not seen during training:</p>
           <div class="trial-btns"
                data-task="drawanything_sim"
                data-split="unseen_rollout"
@@ -631,7 +637,7 @@
       <p>The purpose of the LIBERO-Gen benchmarks is to evaluate test-time adaptation to new tasks. By new tasks we do not mean entirely new action primitives. Instead, we define new tasks as unseen compositions of existing mainpulation primitives. We structure our LIBERO-Gen experiments to evaluate if models can follow new instructions to complete these unseen compositions.</p>
 
       <!-- Combination -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>LIBERO-Gen Combination</h3>
         <p>In this benchmark we have one environment containing two identical bowls that are placed at varying initial locations in the scene. The policy is instructed to pick one of the two bowls and then place that bowl in an instructed target location. We train on many pick-place location combinations and evaluate on unseen pick-place combinations at test-time.</p>
         <div class="libero-viewer" data-experiment="libero_combination" data-default-split="libero_spatial_selected_combinations_view">
@@ -650,7 +656,7 @@
       </div>
 
       <!-- Chain -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>LIBERO-Gen Chain</h3>
         <p>In this benchmark we have one environment and explore the set of possible two-step interactions. First step actions include opening top/middle drawer, pushing the plate, turning on the stove, and pick-place actions. Second step actions include pick-place actions. We evaluate a model's instruction-following ability to complete sequential execution of two individually seen manipulation primitives never seen jointly during training.</p>
         <div class="libero-viewer" data-experiment="libero_chain" data-default-split="libero_goal_chain_selected_view">
@@ -669,7 +675,7 @@
       </div>
 
       <!-- Chain (No Second Step) -->
-      <div class="libero-subsection">
+      <div class="subsection">
         <h3>LIBERO-Gen Chain (No Second Step)</h3>
         <p>We perform an ablation on the training data composition by removing the second-step tasks from the training dataset. This means that when we evaluate on unseen chained tasks, the second step in that chain has not been seen during training. For example, if the unseen chained task is "push the plate to the front of the stove and then put the bowl on the plate," then the policy will have never seen how to place the bowl on the plate after the plate has already moved to the location after the push. This increases the difficulty of completing the unseen tasks as it requires the model to 1) understand new two-step instructions and 2) complete a known manipulation primitive in an unseen environment state.</p>
         <div class="libero-viewer" data-experiment="libero_chain_no_second_step" data-default-split="libero_goal_chain_selected_view">
@@ -750,7 +756,7 @@
     function getOrCreateHeadingRow(ref) {
       const prev = ref.previousElementSibling;
       if (prev?.classList.contains('section-heading-row')) return prev;
-      const anchor = prev ?? ref.closest('.libero-subsection')?.querySelector('h3');
+      const anchor = prev ?? ref.closest('.subsection')?.querySelector('h3');
       if (!anchor) return null;
       const row = document.createElement('div');
       row.className = 'section-heading-row';
@@ -1048,6 +1054,7 @@
               if (promptVid) {
                 promptVid.loop = true;
                 promptVid.removeEventListener('ended', promptPauseOnEnd);
+                if (promptVid.paused) promptVid.play();
               }
             }
           });
