@@ -25,6 +25,7 @@
       --max-w:       860px;
       --radius:      10px;
       --btn-height:  2rem;
+      --title-vid-gap: 0.15rem;
     }
 
     /* ── reset ────────────────────────────────────────────────── */
@@ -125,7 +126,7 @@
       align-items: baseline;
       justify-content: center;
       gap: 0.6rem;
-      margin: 0.15rem 0 0.15rem;
+      margin: 0.45rem 0 var(--title-vid-gap);
     }
 
     .video-header-row .prompt-heading,
@@ -288,7 +289,7 @@
       display: grid;
       grid-row: span 2;
       grid-template-rows: subgrid;
-      row-gap: 0.5rem;
+      row-gap: var(--title-vid-gap);
     }
 
     .model-col h4 {
@@ -324,7 +325,7 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--title-vid-gap);
     }
 
     .attention-row video {
@@ -444,7 +445,6 @@
       border: 1px solid var(--border);
       background: #000;
       display: block;
-      margin-top: 0.3rem;
     }
 
     .laundry-viewer video:not(.prompt-video) {
